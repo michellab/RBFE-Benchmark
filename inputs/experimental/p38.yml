@@ -1,0 +1,340 @@
+lig_2a:
+  measurement:
+    comment: Table 2, entry 2a
+    doi: 10.1021/jm101423y
+    error: 4
+    type: ic50
+    unit: nM
+    value: 10
+  name: lig_2a
+  smiles: '[H][C]1=[N][C]([N]([H])[C]2([H])[C]([H])([H])[C]([H])([H])[O][C]([H])([H])[C]2([H])[H])=[N][C]2=[C]1[C]([H])=[C]([O][C]1=[C]([F])[C]([H])=[C]([F])[C]([H])=[C]1[H])[C](=[O])[N]2[C]([H])([H])[H]'
+lig_2aa:
+  measurement:
+    comment: Table 4, entry 2aa
+    doi: 10.1021/jm101423y
+    error: 67
+    type: ic50
+    unit: nM
+    value: 158
+  name: lig_2aa
+  smiles: '[H][O][C]([H])([H])[C]([H])([N]([H])[C]1=[N][C]2=[C]([C]([H])=[N]1)[C]([H])=[C]([O][C]1=[C]([F])[C]([H])=[C]([F])[C]([H])=[C]1[H])[C](=[O])[N]2[C]([H])([H])[H])[C]([H])([H])[O][H]'
+lig_2b:
+  measurement:
+    comment: Table 4, entry 2b
+    doi: 10.1021/jm101423y
+    error: 2
+    type: ic50
+    unit: nM
+    value: 14
+  name: lig_2b
+  smiles: '[H][O][C]([H])([H])[C]([H])([H])[C]([H])([N]([H])[C]1=[N][C]([H])=[C]2[C](=[N]1)[N]([C]([H])([H])[H])[C](=[O])[C]([O][C]1=[C]([F])[C]([H])=[C]([F])[C]([H])=[C]1[H])=[C]2[H])[C]([H])([H])[C]([H])([H])[O][H]'
+lig_2bb:
+  measurement:
+    comment: Table 4, entry 2bb
+    doi: 10.1021/jm101423y
+    error: 74
+    type: ic50
+    unit: nM
+    value: 223
+  name: lig_2bb
+  smiles: '[H][C]1=[N][C]([N]([H])[C]([H])([H])[C]([H])([H])[S](=[O])(=[O])[C]([H])([H])[H])=[N][C]2=[C]1[C]([H])=[C]([O][C]1=[C]([F])[C]([H])=[C]([F])[C]([H])=[C]1[H])[C](=[O])[N]2[C]([H])([H])[H]'
+lig_2cc:
+  measurement:
+    comment: Table 4, entry 2cc, R enantiomer
+    doi: 10.1021/jm101423y
+    error: 1
+    type: ic50
+    unit: nM
+    value: 5
+  name: lig_2cc
+  smiles: '[H]N(C1=NC2=C(C([H])=N1)C([H])=C(OC1=C(F)C([H])=C(F)C([H])=C1[H])C(=O)N2C([H])([H])[H])[C@]([H])(C([H])([H])[H])C([H])([H])S(=O)(=O)C([H])([H])[H]'
+  lig_2d:
+  measurement:
+    comment: Table 2, entry 2d
+    doi: 10.1021/jm101423y
+    error: 36
+    type: ic50
+    unit: nM
+    value: 106
+  name: lig_2d
+  smiles: '[H][C]1=[N][C]([N]([H])[C]2([H])[C]([H])([H])[C]([H])([H])[O][C]([H])([H])[C]2([H])[H])=[N][C]2=[C]1[C]([H])=[C]([O][C]1=[C]([H])[C]([H])=[C]([H])[C]([H])=[C]1[H])[C](=[O])[N]2[C]([H])([H])[H]'
+lig_2dd:
+  measurement:
+    comment: Table 4, entry 2dd, S enantiomer
+    doi: 10.1021/jm101423y
+    error: 20
+    type: ic50
+    unit: nM
+    value: 50
+  name: lig_2dd
+  smiles: '[H]N(C1=NC2=C(C([H])=N1)C([H])=C(OC1=C(F)C([H])=C(F)C([H])=C1[H])C(=O)N2C([H])([H])[H])[C@@]([H])(C([H])([H])[H])C([H])([H])S(=O)(=O)C([H])([H])[H]'
+  lig_2e:
+  measurement:
+    comment: Table 2, entry 2e
+    doi: 10.1021/jm101423y
+    error: 6
+    type: ic50
+    unit: nM
+    value: 14
+  name: lig_2e
+  smiles: '[H][C]1=[N][C]([N]([H])[C]2([H])[C]([H])([H])[C]([H])([H])[O][C]([H])([H])[C]2([H])[H])=[N][C]2=[C]1[C]([H])=[C]([O][C]1=[C]([H])[C]([H])=[C]([F])[C]([H])=[C]1[H])[C](=[O])[N]2[C]([H])([H])[H]'
+lig_2ee:
+  measurement:
+    comment: Table 4, entry 2ee
+    doi: 10.1021/jm101423y
+    error: 0.6
+    type: ic50
+    unit: nM
+    value: 1
+  name: lig_2ee
+  smiles: '[H][C]1=[N][C]([N]([H])[C]2([H])[C]([H])([H])[C]([H])([H])[N]([C](=[O])[C]([H])([H])[H])[C]([H])([H])[C]2([H])[H])=[N][C]2=[C]1[C]([H])=[C]([O][C]1=[C]([F])[C]([H])=[C]([F])[C]([H])=[C]1[H])[C](=[O])[N]2[C]([H])([H])[H]'
+lig_2f:
+  measurement:
+    comment: Table 2, entry 2f
+    doi: 10.1021/jm101423y
+    error: 211
+    type: ic50
+    unit: nM
+    value: 594
+  name: lig_2f
+  smiles: '[H][C]1=[N][C]([N]([H])[C]2([H])[C]([H])([H])[C]([H])([H])[O][C]([H])([H])[C]2([H])[H])=[N][C]2=[C]1[C]([H])=[C]([O][C]1=[C]([H])[C]([H])=[C]([H])[C]([F])=[C]1[H])[C](=[O])[N]2[C]([H])([H])[H]'
+lig_2ff:
+  measurement:
+    comment: Table 4, entry 2ff
+    doi: 10.1021/jm101423y
+    error: 0.6
+    type: ic50
+    unit: nM
+    value: 4
+  name: lig_2ff
+  smiles: '[H][O][C]1([H])[C]([H])([H])[C]([H])([H])[C]([H])([N]([H])[C]2=[N][C]3=[C]([C]([H])=[N]2)[C]([H])=[C]([O][C]2=[C]([F])[C]([H])=[C]([F])[C]([H])=[C]2[H])[C](=[O])[N]3[C]([H])([H])[H])[C]([H])([H])[C]1([H])[H]'
+lig_2g:
+  measurement:
+    comment: Table 2, entry 2g
+    doi: 10.1021/jm101423y
+    error: 6
+    type: ic50
+    unit: nM
+    value: 15
+  name: lig_2g
+  smiles: '[H][C]1=[N][C]([N]([H])[C]2([H])[C]([H])([H])[C]([H])([H])[O][C]([H])([H])[C]2([H])[H])=[N][C]2=[C]1[C]([H])=[C]([O][C]1=[C]([F])[C]([H])=[C]([H])[C]([H])=[C]1[H])[C](=[O])[N]2[C]([H])([H])[H]'
+lig_2gg:
+  measurement:
+    comment: Table 4, entry 2gg
+    doi: 10.1021/jm101423y
+    error: 2
+    type: ic50
+    unit: nM
+    value: 15
+  name: lig_2gg
+  smiles: '[H][C]1=[N][C]([N]([H])[C]2([H])[C]([H])([H])[C]([H])([H])[S](=[O])(=[O])[C]([H])([H])[C]2([H])[H])=[N][C]2=[C]1[C]([H])=[C]([O][C]1=[C]([F])[C]([H])=[C]([F])[C]([H])=[C]1[H])[C](=[O])[N]2[C]([H])([H])[H]'
+lig_2h:
+  measurement:
+    comment: Table 2, entry 2h
+    doi: 10.1021/jm101423y
+    error: 35
+    type: ic50
+    unit: nM
+    value: 111
+  name: lig_2h
+  smiles: '[H][C]1=[N][C]([N]([H])[C]2([H])[C]([H])([H])[C]([H])([H])[O][C]([H])([H])[C]2([H])[H])=[N][C]2=[C]1[C]([H])=[C]([S][C]1=[C]([H])[C]([H])=[C]([H])[C]([H])=[C]1[F])[C](=[O])[N]2[C]([H])([H])[H]'
+lig_2hh:
+  measurement:
+    comment: Table 4, entry 2hh
+    doi: 10.1021/jm101423y
+    error: 0.7
+    type: ic50
+    unit: nM
+    value: 2
+  name: lig_2hh
+  smiles: '[H]N(C1=NC([H])=C2C([H])=C(OC3=C(F)C([H])=C(F)C([H])=C3[H])C(=O)N(C2=N1)C([H])([H])[H])[C@@]([H])(C([H])([H])[H])C([H])([H])N1N=NC([H])=N1'
+  lig_2i:
+  measurement:
+    comment: Table 2, entry 2i
+    doi: 10.1021/jm101423y
+    error: 15
+    type: ic50
+    unit: nM
+    value: 42
+  name: lig_2i
+  smiles: '[H][C]1=[N][C]([N]([H])[C]2([H])[C]([H])([H])[C]([H])([H])[O][C]([H])([H])[C]2([H])[H])=[N][C]2=[C]1[C]([H])=[C]([C]([H])([H])[C]1=[C]([H])[C]([H])=[C]([H])[C]([H])=[C]1[F])[C](=[O])[N]2[C]([H])([H])[H]'
+lig_2ii:
+  measurement:
+    comment: Table 4, entry 2ii; no error given as n=1
+    doi: 10.1021/jm101423y
+    error: -1
+    type: ic50
+    unit: nM
+    value: 11
+  name: lig_2ii
+  smiles: '[H]N(C1=NC([H])=C2C([H])=C(OC3=C(F)C([H])=C(F)C([H])=C3[H])C(=O)N(C2=N1)C([H])([H])[H])[C@]([H])(C([H])([H])[H])C([H])([H])N1N=NC([H])=N1'
+lig_2j:
+  measurement:
+    comment: Table 2, entry 2j
+    doi: 10.1021/jm101423y
+    error: 11
+    type: ic50
+    unit: nM
+    value: 40
+  name: lig_2j
+  smiles: '[H][C]1=[N][C]([N]([H])[C]2([H])[C]([H])([H])[C]([H])([H])[O][C]([H])([H])[C]2([H])[H])=[N][C]2=[C]1[C]([H])=[C]([C]([H])([H])[C]1=[C]([H])[C]([H])=[C]([F])[C]([H])=[C]1[F])[C](=[O])[N]2[C]([H])([H])[H]'
+lig_2k:
+  measurement:
+    comment: Table 3, entry 2k
+    doi: 10.1021/jm101423y
+    error: 3
+    type: ic50
+    unit: nM
+    value: 18
+  name: lig_2k
+  smiles: '[H][C]1=[N][C]([N]([H])[C]2([H])[C]([H])([H])[C]([H])([H])[O][C]([H])([H])[C]2([H])[H])=[N][C]2=[C]1[C]([H])=[C]([O][C]1=[C]([F])[C]([H])=[C]([F])[C]([H])=[C]1[H])[C](=[O])[N]2[H]'
+lig_2l:
+  measurement:
+    comment: Table 3, entry 2l
+    doi: 10.1021/jm101423y
+    error: 0.1
+    type: ic50
+    unit: nM
+    value: 1
+  name: lig_2l
+  smiles: '[H][C]1=[N][C]([N]([H])[C]2([H])[C]([H])([H])[C]([H])([H])[O][C]([H])([H])[C]2([H])[H])=[N][C]2=[C]1[C]([H])=[C]([O][C]1=[C]([F])[C]([H])=[C]([F])[C]([H])=[C]1[H])[C](=[O])[N]2[C]([H])([H])[C]([H])([H])[H]'
+lig_2m:
+  measurement:
+    comment: Table 3, entry 2m
+    doi: 10.1021/jm101423y
+    error: 1
+    type: ic50
+    unit: nM
+    value: 9
+  name: lig_2m
+  smiles: '[H][C]1=[N][C]([N]([H])[C]2([H])[C]([H])([H])[C]([H])([H])[O][C]([H])([H])[C]2([H])[H])=[N][C]2=[C]1[C]([H])=[C]([O][C]1=[C]([F])[C]([H])=[C]([F])[C]([H])=[C]1[H])[C](=[O])[N]2[C]1([H])[C]([H])([H])[C]1([H])[H]'
+lig_2n:
+  measurement:
+    comment: Table 3, entry 2n
+    doi: 10.1021/jm101423y
+    error: 0.5
+    type: ic50
+    unit: nM
+    value: 2
+  name: lig_2n
+  smiles: '[H][O][C]([H])([H])[C]([H])([H])[C]([H])([H])[N]1[C](=[O])[C]([O][C]2=[C]([H])[C]([H])=[C]([F])[C]([H])=[C]2[F])=[C]([H])[C]2=[C]1[N]=[C]([N]([H])[C]1([H])[C]([H])([H])[C]([H])([H])[O][C]([H])([H])[C]1([H])[H])[N]=[C]2[H]'
+lig_2o:
+  measurement:
+    comment: Table 3, entry 2o
+    doi: 10.1021/jm101423y
+    error: 4
+    type: ic50
+    unit: nM
+    value: 20
+  name: lig_2o
+  smiles: '[H][C]1=[N][C]([N]([H])[C]2([H])[C]([H])([H])[C]([H])([H])[O][C]([H])([H])[C]2([H])[H])=[N][C]2=[C]1[C]([H])=[C]([O][C]1=[C]([F])[C]([H])=[C]([F])[C]([H])=[C]1[H])[C](=[O])[N]2[C]([H])([H])[C]([H])([H])[S](=[O])(=[O])[C]([H])([H])[H]'
+lig_2p:
+  measurement:
+    comment: Table 3, entry 2p
+    doi: 10.1021/jm101423y
+    error: 0.5
+    type: ic50
+    unit: nM
+    value: 6
+  name: lig_2p
+  smiles: '[H][C]1=[N][C]([N]([H])[C]2([H])[C]([H])([H])[C]([H])([H])[O][C]([H])([H])[C]2([H])[H])=[N][C]2=[C]1[C]([H])=[C]([O][C]1=[C]([F])[C]([H])=[C]([F])[C]([H])=[C]1[H])[C](=[O])[N]2[C]([H])([H])[C]([H])([H])[C]([H])([H])[S](=[O])(=[O])[C]([H])([H])[H]'
+lig_2q:
+  measurement:
+    comment: Table 3, entry 2q
+    doi: 10.1021/jm101423y
+    error: 0.2
+    type: ic50
+    unit: nM
+    value: 1
+  name: lig_2q
+  smiles: '[H]N(C1=NC2=C(C([H])=N1)C([H])=C(OC1=C(F)C([H])=C(F)C([H])=C1[H])C(=O)N2C1([H])C([H])([H])C([H])([H])S(=O)(=O)C([H])([H])C1([H])[H])C1([H])C([H])([H])C([H])([H])OC([H])([H])C1([H])[H]'
+lig_2r:
+  measurement:
+    comment: Table 3, entry 2r
+    doi: 10.1021/jm101423y
+    error: 2
+    type: ic50
+    unit: nM
+    value: 12
+  name: lig_2r
+  smiles: '[H][O][C]([C]([H])([H])[H])([C]([H])([H])[H])[C]([H])([H])[N]1[C](=[O])[C]([O][C]2=[C]([F])[C]([H])=[C]([F])[C]([H])=[C]2[H])=[C]([H])[C]2=[C]1[N]=[C]([N]([H])[C]1([H])[C]([H])([H])[C]([H])([H])[O][C]([H])([H])[C]1([H])[H])[N]=[C]2[H]'
+lig_2s:
+  measurement:
+    comment: Table 3, entry 2s
+    doi: 10.1021/jm101423y
+    error: 1
+    type: ic50
+    unit: nM
+    value: 7
+  name: lig_2s
+  smiles: '[H][O][C]([H])([H])[C@@]([H])([O][H])[C]([H])([H])[N]1[C](=[O])[C]([O][C]2=[C]([H])[C]([H])=[C]([F])[C]([H])=[C]2[F])=[C]([H])[C]2=[C]1[N]=[C]([N]([H])[C]1([H])[C]([H])([H])[C]([H])([H])[O][C]([H])([H])[C]1([H])[H])[N]=[C]2[H]'
+lig_2t:
+  measurement:
+    comment: Table 3, entry 2t
+    doi: 10.1021/jm101423y
+    error: 0.3
+    type: ic50
+    unit: nM
+    value: 2
+  name: lig_2t
+  smiles: '[H][C]1=[N][C]([N]([H])[C]2([H])[C]([H])([H])[C]([H])([H])[O][C]([H])([H])[C]2([H])[H])=[N][C]2=[C]1[C]([H])=[C]([O][C]1=[C]([F])[C]([H])=[C]([F])[C]([H])=[C]1[H])[C](=[O])[N]2[C]([H])([H])[C]#[N]'
+lig_2u:
+  measurement:
+    comment: Table 3, entry 2u
+    doi: 10.1021/jm101423y
+    error: 0.1
+    type: ic50
+    unit: nM
+    value: 1
+  name: lig_2u
+  smiles: '[H]N(C1=NC2=C(C([H])=N1)C([H])=C(OC1=C(F)C([H])=C(F)C([H])=C1[H])C(=O)N2C1([H])C([H])([H])C([H])([H])N(C([H])([H])C1([H])[H])S(=O)(=O)C([H])([H])[H])C1([H])C([H])([H])C([H])([H])OC([H])([H])C1([H])[H]'
+lig_2v:
+  measurement:
+    comment: Table 4, entry 2v
+    doi: 10.1021/jm101423y
+    error: 75
+    type: ic50
+    unit: nM
+    value: 260
+  name: lig_2v
+  smiles: '[H][C]1=[N][C]([N]([H])[C]([H])([H])[H])=[N][C]2=[C]1[C]([H])=[C]([O][C]1=[C]([F])[C]([H])=[C]([F])[C]([H])=[C]1[H])[C](=[O])[N]2[C]([H])([H])[H]'
+lig_2w:
+  measurement:
+    comment: Table 4, entry 2w
+    doi: 10.1021/jm101423y
+    error: 0.3
+    type: ic50
+    unit: nM
+    value: 4
+  name: lig_2w
+  smiles: '[H][C]1=[N][C]([N]([H])[C]([H])([C]([H])([H])[H])[C]([H])([H])[H])=[N][C]2=[C]1[C]([H])=[C]([O][C]1=[C]([F])[C]([H])=[C]([F])[C]([H])=[C]1[H])[C](=[O])[N]2[C]([H])([H])[H]'
+  lig_2x:
+  measurement:
+    comment: Table 4, entry 2x
+    doi: 10.1021/jm101423y
+    error: 8
+    type: ic50
+    unit: nM
+    value: 31
+  name: lig_2x
+  smiles: '[H][C]1=[N][C]([N]([H])[C@@]2([H])[C]([H])([H])[O][C]([H])([H])[C]2([H])[H])=[N][C]2=[C]1[C]([H])=[C]([O][C]1=[C]([F])[C]([H])=[C]([F])[C]([H])=[C]1[H])[C](=[O])[N]2[C]([H])([H])[H]'
+lig_2y:
+  measurement:
+    comment: Table 4, entry 2y
+    doi: 10.1021/jm101423y
+    error: 26
+    type: ic50
+    unit: nM
+    value: 67
+  name: lig_2y
+  smiles: '[H][O][C]([C]([H])([H])[H])([C]([H])([H])[H])[C]([H])([H])[N]([H])[C]1=[N][C]2=[C]([C]([H])=[N]1)[C]([H])=[C]([O][C]1=[C]([F])[C]([H])=[C]([F])[C]([H])=[C]1[H])[C](=[O])[N]2[C]([H])([H])[H]'
+lig_2z:
+  measurement:
+    comment: Table 4, entry 2z
+    doi: 10.1021/jm101423y
+    error: 8
+    type: ic50
+    unit: nM
+    value: 25
+  name: lig_2z
+  smiles: '[H][O][C]([H])([H])[C]([N]([H])[C]1=[N][C]2=[C]([C]([H])=[N]1)[C]([H])=[C]([O][C]1=[C]([F])[C]([H])=[C]([F])[C]([H])=[C]1[H])[C](=[O])[N]2[C]([H])([H])[H])([C]([H])([H])[H])[C]([H])([H])[H]'
