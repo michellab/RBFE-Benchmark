@@ -1,0 +1,45 @@
+lig_0,lig_1,freenrg,error,engine,method
+lig_ejm44,lig_ejm54,-1.5398 kcal/mol,0.0389 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm45,lig_ejm53,1.0675 kcal/mol,0.0506 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm48,lig_ejm55,0.1705 kcal/mol,0.0356 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm54,lig_ejm55,1.4737 kcal/mol,0.0272 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm45,lig_ejm55,-0.6893 kcal/mol,0.0358 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm43,lig_ejm46,  nan kcal/mol,  nan kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm43,lig_ejm47,-1.0642 kcal/mol,0.0271 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm42,lig_ejm53,-0.1308 kcal/mol,0.0363 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm42,lig_ejm46,-0.2758 kcal/mol,0.0211 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm42,lig_ejm47,-0.6690 kcal/mol,0.0251 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm42,lig_ejm48,-0.8366 kcal/mol,0.0309 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm43,lig_ejm50,-0.3620 kcal/mol,0.0580 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm42,lig_ejm45,2.4248 kcal/mol,0.0253 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm42,lig_ejm50,-0.1704 kcal/mol,0.0688 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm44,lig_ejm55,-1.8807 kcal/mol,0.0439 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm44,lig_ejm49,-2.1285 kcal/mol,0.0403 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm31,lig_ejm49,0.6146 kcal/mol,0.0381 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm31,lig_ejm42,0.4183 kcal/mol,0.0194 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm42,lig_ejm55,-0.2667 kcal/mol,0.0141 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm42,lig_ejm44,-0.7185 kcal/mol,0.0258 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_jmc27,lig_jmc30,-0.7375 kcal/mol,0.0686 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_jmc23,lig_jmc30,-0.2092 kcal/mol,0.0210 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm31,lig_ejm44,1.7301 kcal/mol,0.0406 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm42,lig_ejm43,-0.5353 kcal/mol,0.0170 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm43,lig_ejm44,1.6267 kcal/mol,0.0210 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm46,lig_jmc27,1.1761 kcal/mol,0.0164 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm46,lig_jmc23,-1.9884 kcal/mol,0.1690 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_jmc27,lig_jmc28,  nan kcal/mol,  nan kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_jmc23,lig_jmc28,-0.7419 kcal/mol,0.0170 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_jmc23,lig_jmc27,-0.4107 kcal/mol,0.0462 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm42,lig_ejm49,-1.4743 kcal/mol,0.0344 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm31,lig_ejm48,  nan kcal/mol,  nan kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm31,lig_ejm53,1.0660 kcal/mol,0.0366 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm31,lig_ejm47,-0.3696 kcal/mol,0.0296 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm31,lig_jmc23,-0.8319 kcal/mol,0.0283 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm31,lig_ejm46,-0.7327 kcal/mol,0.0232 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm44,lig_ejm45,-0.4179 kcal/mol,0.0409 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm31,lig_ejm45,  nan kcal/mol,  nan kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_jmc28,lig_jmc30,-0.7383 kcal/mol,0.0191 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm46,lig_jmc30,-1.2052 kcal/mol,0.0235 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm42,lig_ejm54,-0.2460 kcal/mol,0.0266 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm31,lig_ejm50,0.6142 kcal/mol,0.0265 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm46,lig_jmc28,  nan kcal/mol,  nan kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
+lig_ejm48,lig_ejm53,0.8952 kcal/mol,0.0180 kcal/mol,AMBER,MBAR_alchemlyb_eqfalse_statsfalse_truncate0start
