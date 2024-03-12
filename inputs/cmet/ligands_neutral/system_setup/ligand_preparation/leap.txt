@@ -1,0 +1,8 @@
+source leaprc.gaff2
+mol = loadMol2 antechamber.mol2
+loadAmberParams antechamber.frcmod
+saveAmberParm mol leap.top leap.crd
+source leaprc.water.tip3p
+solvateBox mol TIP3PBOX 12.0
+saveAmberParm mol /tmp/leap_qu4xxudi.top /tmp/leap_qu4xxudi.crd
+quit

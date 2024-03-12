@@ -1,0 +1,11 @@
+              :-) GROMACS - gmx editconf, 2022.5-plumed_2.8.2 (-:
+
+Executable:   /apps/compchem/gromacs/2022.5/bin/gmx
+Data prefix:  /apps/compchem/gromacs/2022.5
+Working dir:  /data/users/carespos/AnnaHerz/cmet/ligands_neutral/system_setup/box_setup
+Command line:
+  gmx editconf -f input.gro -bt triclinic -box 4.000000 3.900000 4.100000 -angles 90.000000 90.000000 90.000000 -noc -o box.gro
+
+
+GROMACS reminds you: "A little less conversation, a little more action, please." (Elvis Presley)
+

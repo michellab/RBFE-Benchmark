@@ -1,0 +1,14 @@
+               :-) GROMACS - gmx genion, 2022.5-plumed_2.8.2 (-:
+
+Executable:   /apps/compchem/gromacs/2022.5/bin/gmx
+Data prefix:  /apps/compchem/gromacs/2022.5
+Working dir:  /data/users/carespos/AnnaHerz/cmet/ligands_neutral/system_setup/box_setup
+Command line:
+  gmx genion -s ions.tpr -o solvated_ions.gro -p solvated.top -neutral -np 0
+
+Reading file ions.tpr, VERSION 2022.5-plumed_2.8.2 (single precision)
+Reading file ions.tpr, VERSION 2022.5-plumed_2.8.2 (single precision)
+No ions to add, will just copy input configuration.
+
+GROMACS reminds you: "She Needs Cash to Buy Aspirine For Her Pain" (LIVE)
+

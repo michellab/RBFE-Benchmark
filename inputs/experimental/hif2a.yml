@@ -1,0 +1,294 @@
+lig_1:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.013
+  name: lig_1
+lig_10:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.038
+  name: lig_10
+lig_11:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.035
+  name: lig_11
+lig_12:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.073
+  name: lig_12
+lig_13:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.33
+  name: lig_13
+lig_14:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.01
+  name: lig_14
+lig_15:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.039
+  name: lig_15
+lig_16:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.015
+  name: lig_16
+lig_17:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.17
+  name: lig_17
+lig_18:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.067
+  name: lig_18
+lig_19:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 3.8
+  name: lig_19
+lig_2:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.42
+  name: lig_2
+lig_20:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.15
+  name: lig_20
+lig_21:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.017
+  name: lig_21
+lig_22:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.015
+  name: lig_22
+lig_23:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.28
+  name: lig_23
+lig_24:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 5.7
+  name: lig_24
+lig_25:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.076
+  name: lig_25
+lig_26:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.063
+  name: lig_26
+lig_27:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.018
+  name: lig_27
+lig_28:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.02
+  name: lig_28
+lig_29:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 11.0
+  name: lig_29
+lig_3:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.038
+  name: lig_3
+lig_30:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.047
+  name: lig_30
+lig_31:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.083
+  name: lig_31
+lig_32:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 2.8
+  name: lig_32
+lig_33:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.1
+  name: lig_33
+lig_34:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 6.6
+  name: lig_34
+lig_35:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.031
+  name: lig_35
+lig_36:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.015
+  name: lig_36
+lig_37:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.078
+  name: lig_37
+lig_38:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.045
+  name: lig_38
+lig_39:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.008
+  name: lig_39
+lig_4:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.026
+  name: lig_4
+lig_40:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.038
+  name: lig_40
+lig_41:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.029
+  name: lig_41
+lig_42:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.0085
+  name: lig_42
+lig_5:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.018
+  name: lig_5
+lig_6:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.005
+  name: lig_6
+lig_7:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.1
+  name: lig_7
+lig_8:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.013
+  name: lig_8
+lig_9:
+  measurement:
+    error: -1
+    type: ic50
+    unit: uM
+    value: 0.019
+  name: lig_9

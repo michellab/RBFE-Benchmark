@@ -1,0 +1,168 @@
+lig_1:
+  measurement:
+    error: 138.15510557964274
+    type: ic50
+    unit: nM
+    value: 200.0
+  name: lig_1
+lig_10:
+  measurement:
+    error: 2901.257217172498
+    type: ic50
+    unit: nM
+    value: 4200.0
+  name: lig_10
+lig_11:
+  measurement:
+    error: 6.907755278982137
+    type: ic50
+    unit: nM
+    value: 10.0
+  name: lig_11
+lig_12:
+  measurement:
+    error: 345.38776394910684
+    type: ic50
+    unit: nM
+    value: 500.0
+  name: lig_12
+lig_13:
+  measurement:
+    error: 4.490040931338389
+    type: ic50
+    unit: nM
+    value: 6.5
+  name: lig_13
+lig_14:
+  measurement:
+    error: 7.598530806880351
+    type: ic50
+    unit: nM
+    value: 11.0
+  name: lig_14
+lig_15:
+  measurement:
+    error: 0.6907755278982137
+    type: ic50
+    unit: nM
+    value: 1.0
+  name: lig_15
+lig_16:
+  measurement:
+    error: 15.887837141658915
+    type: ic50
+    unit: nM
+    value: 23.0
+  name: lig_16
+lig_17:
+  measurement:
+    error: 27.631021115928547
+    type: ic50
+    unit: nM
+    value: 40.0
+  name: lig_17
+lig_18:
+  measurement:
+    error: 3661.1102978605327
+    type: ic50
+    unit: nM
+    value: 5300.0
+  name: lig_18
+lig_19:
+  measurement:
+    error: 276.3102111592855
+    type: ic50
+    unit: nM
+    value: 400.0
+  name: lig_19
+lig_2:
+  measurement:
+    error: 3.937420509019818
+    type: ic50
+    unit: nM
+    value: 5.7
+  name: lig_2
+lig_20:
+  measurement:
+    error: 62.16979751083924
+    type: ic50
+    unit: nM
+    value: 90.0
+  name: lig_20
+lig_21:
+  measurement:
+    error: 62.16979751083924
+    type: ic50
+    unit: nM
+    value: 90.0
+  name: lig_21
+lig_22:
+  measurement:
+    error: 1450.628608586249
+    type: ic50
+    unit: nM
+    value: 2100.0
+  name: lig_22
+lig_23:
+  measurement:
+    error: 1.8650939253251773
+    type: ic50
+    unit: nM
+    value: 2.7
+  name: lig_23
+lig_24:
+  measurement:
+    error: 0.6907755278982137
+    type: ic50
+    unit: nM
+    value: 1.0
+  name: lig_24
+lig_3:
+  measurement:
+    error: 2348.636794853927
+    type: ic50
+    unit: nM
+    value: 3400.0
+  name: lig_3
+lig_4:
+  measurement:
+    error: 207.2326583694641
+    type: ic50
+    unit: nM
+    value: 300.0
+  name: lig_4
+lig_5:
+  measurement:
+    error: 138.15510557964274
+    type: ic50
+    unit: nM
+    value: 200.0
+  name: lig_5
+lig_6:
+  measurement:
+    error: 0.6907755278982137
+    type: ic50
+    unit: nM
+    value: 1.0
+  name: lig_6
+lig_7:
+  measurement:
+    error: 276.3102111592855
+    type: ic50
+    unit: nM
+    value: 400.0
+  name: lig_7
+lig_8:
+  measurement:
+    error: 29.012572171724976
+    type: ic50
+    unit: nM
+    value: 42.0
+  name: lig_8
+lig_9:
+  measurement:
+    error: 20723.26583694641
+    type: ic50
+    unit: nM
+    value: 30000.0
+  name: lig_9

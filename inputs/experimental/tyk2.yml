@@ -28,7 +28,7 @@ lig_ejm43:
     value: 0.84
   name: lig_ejm43
   smiles: '[H]c1c(c(c(c(c1[H])Cl)C(=O)N([H])c2c(c(nc(c2[H])N([H])C(=O)C([H])(C([H])([H])[H])C([H])([H])[H])[H])[H])Cl)[H]'
-  lig_ejm44:
+lig_ejm44:
   measurement:
     comment: Table 4, entry 44, greater than value
     doi: 10.1016/j.ejmech.2013.03.070
@@ -78,7 +78,7 @@ lig_ejm48:
     value: 0.24
   name: lig_ejm48
   smiles: '[H]c1c(c(c(c(c1[H])Cl)C(=O)N([H])c2c(c(nc(c2[H])N([H])C(=O)C3(C(C(C(C3([H])[H])([H])[H])([H])[H])([H])[H])[H])[H])[H])Cl)[H]'
-  lig_ejm49:
+lig_ejm49:
   measurement:
     comment: Table 4, entry 49
     doi: 10.1016/j.ejmech.2013.03.070
@@ -98,7 +98,7 @@ lig_ejm50:
     value: 0.25
   name: lig_ejm50
   smiles: '[H]c1c(c(c(c(c1[H])Cl)C(=O)N([H])c2c(c(nc(c2[H])N([H])C(=O)C([H])([H])O[H])[H])[H])Cl)[H]'
-  lig_ejm53:
+lig_ejm53:
   measurement:
     comment: Table 4, entry 53
     doi: 10.1016/j.ejmech.2013.03.070
@@ -159,7 +159,7 @@ lig_jmc28:
     value: 8.5
   name: lig_jmc28
   smiles: '[H]c1c(c(c(c(c1[H])Cl)C(=O)N([H])c2c(c(nc(c2[H])N([H])C(=O)[C@@]3([C@](C3([H])[H])([H])C([H])([H])[H])[H])[H])[H])Cl)[H]'
-  lig_jmc30:
+lig_jmc30:
   measurement:
     comment: Table 2, entry 30; cis enantiomer
     doi: 10.1021/jm400266t

@@ -1,0 +1,34 @@
+
+Welcome to antechamber 21.0: molecular input file processor.
+
+acdoctor mode is on: check and diagnose problems in the input file.
+The atom type is set to 2; the options available to the -at flag are
+    gaff, gaff2, amber, bcc, and sybyl.
+-- Check Format for pdb File --
+   Status: pass
+Info: Determining atomic numbers from atomic symbols which are case sensitive.
+-- Check Unusual Elements --
+   Status: pass
+-- Check Open Valences --
+   Status: pass
+-- Check Geometry --
+      for those bonded   
+      for those not bonded   
+   Status: pass
+-- Check Weird Bonds --
+   Status: pass
+-- Check Number of Units --
+   Status: pass
+acdoctor mode has completed checking the input file.
+
+Running: /apps/compchem/amber/20.12.0/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+
+Running: /apps/compchem/amber/20.12.0/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p 2
+Info: Total number of electrons: 202; net charge: 0
+
+Running: /apps/compchem/amber/20.12.0/bin/sqm -O -i sqm.in -o sqm.out
+
+Running: /apps/compchem/amber/20.12.0/bin/am1bcc -i ANTECHAMBER_AM1BCC_PRE.AC -o ANTECHAMBER_AM1BCC.AC -f ac -p /apps/compchem/amber/20.12.0/dat/antechamber/BCCPARM.DAT -s 2 -j 1
+
+Running: /apps/compchem/amber/20.12.0/bin/atomtype -f ac -p bcc -o ANTECHAMBER_AM1BCC.AC -i ANTECHAMBER_AM1BCC_PRE.AC
+
