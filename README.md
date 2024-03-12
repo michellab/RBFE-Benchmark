@@ -1,4 +1,4 @@
-# rbfe-benchmark-2022
+# RBFE Benchmark
 
 **inputs** - contains all the ligands as sdf files and the parameterised proteins (ff14SB)
 
