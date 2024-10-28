@@ -9,7 +9,7 @@ import numpy as np
 
 protein = sys.argv[1]
 
-ligand_files = glob.glob(f"../{protein}/ligands_*/lig_*")
+ligand_files = glob.glob(f"../protein_systems/{protein}/ligands_*/lig_*")
 
 value_dict = {}
 
@@ -25,6 +25,6 @@ for f in ligand_files:
     value_dict[lig_name] = {"measurement":{"type":"ic50", "error":err, "unit":unit,
         "value":float(binding_val)}, "name":lig_name}
 
-with open(f"{protein}.yml", "w") as fiel:
-    yaml.dump(value_dict, fiel)
+with open(f"{protein}.yml", "w") as file:
+    yaml.dump(value_dict, file)
 
