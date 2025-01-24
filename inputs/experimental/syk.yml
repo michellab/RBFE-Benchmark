@@ -1,308 +1,245 @@
-lig_1:
+lig_CHEMBL3259820:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 4.3
-  name: lig_1
-lig_10:
+    type: dG
+    unit: kcal/mol
+    value: -10.5757
+  name: lig_CHEMBL3259820
+lig_CHEMBL3264996:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 26.8
-  name: lig_10
-lig_11:
+    type: dG
+    unit: kcal/mol
+    value: -10.6659
+  name: lig_CHEMBL3264996
+lig_CHEMBL3264999:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 8.5
-  name: lig_11
-lig_12:
+    type: dG
+    unit: kcal/mol
+    value: -11.414
+  name: lig_CHEMBL3264999
+lig_CHEMBL3265002:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 8.9
-  name: lig_12
-lig_13:
+    type: dG
+    unit: kcal/mol
+    value: -10.6173
+  name: lig_CHEMBL3265002
+lig_CHEMBL3265004:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 15.2
-  name: lig_13
-lig_14:
+    type: dG
+    unit: kcal/mol
+    value: -10.8575
+  name: lig_CHEMBL3265004
+lig_CHEMBL3265005:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 65.0
-  name: lig_14
-lig_15:
+    type: dG
+    unit: kcal/mol
+    value: -10.3233
+  name: lig_CHEMBL3265005
+lig_CHEMBL3265006:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 0.84
-  name: lig_15
-lig_16:
+    type: dG
+    unit: kcal/mol
+    value: -9.95804
+  name: lig_CHEMBL3265006
+lig_CHEMBL3265008:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 7.7
-  name: lig_16
-lig_17:
+    type: dG
+    unit: kcal/mol
+    value: -9.78436
+  name: lig_CHEMBL3265008
+lig_CHEMBL3265009:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 1.4
-  name: lig_17
-lig_18:
+    type: dG
+    unit: kcal/mol
+    value: -10.2976
+  name: lig_CHEMBL3265009
+lig_CHEMBL3265010:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 0.44
-  name: lig_18
-lig_19:
+    type: dG
+    unit: kcal/mol
+    value: -10.1324
+  name: lig_CHEMBL3265010
+lig_CHEMBL3265012:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 4.7
-  name: lig_19
-lig_2:
+    type: dG
+    unit: kcal/mol
+    value: -10.5463
+  name: lig_CHEMBL3265012
+lig_CHEMBL3265013:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 23.8
-  name: lig_2
-lig_20:
+    type: dG
+    unit: kcal/mol
+    value: -9.81322
+  name: lig_CHEMBL3265013
+lig_CHEMBL3265014:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 18.6
-  name: lig_20
-lig_21:
+    type: dG
+    unit: kcal/mol
+    value: -10.4002
+  name: lig_CHEMBL3265014
+lig_CHEMBL3265016:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 11.7
-  name: lig_21
-lig_22:
+    type: dG
+    unit: kcal/mol
+    value: -11.6897
+  name: lig_CHEMBL3265016
+lig_CHEMBL3265017:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 2.6
-  name: lig_22
-lig_23:
+    type: dG
+    unit: kcal/mol
+    value: -11.4873
+  name: lig_CHEMBL3265017
+lig_CHEMBL3265018:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 7.0
-  name: lig_23
-lig_24:
+    type: dG
+    unit: kcal/mol
+    value: -11.1877
+  name: lig_CHEMBL3265018
+lig_CHEMBL3265019:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 7.6
-  name: lig_24
-lig_25:
+    type: dG
+    unit: kcal/mol
+    value: -10.777
+  name: lig_CHEMBL3265019
+lig_CHEMBL3265020:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 2.3
-  name: lig_25
-lig_26:
+    type: dG
+    unit: kcal/mol
+    value: -11.0033
+  name: lig_CHEMBL3265020
+lig_CHEMBL3265021:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 6.3
-  name: lig_26
-lig_27:
+    type: dG
+    unit: kcal/mol
+    value: -10.8907
+  name: lig_CHEMBL3265021
+lig_CHEMBL3265022:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 67.3
-  name: lig_27
-lig_28:
+    type: dG
+    unit: kcal/mol
+    value: -10.7913
+  name: lig_CHEMBL3265022
+lig_CHEMBL3265023:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 2.7
-  name: lig_28
-lig_29:
+    type: dG
+    unit: kcal/mol
+    value: -10.4772
+  name: lig_CHEMBL3265023
+lig_CHEMBL3265024:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 33.4
-  name: lig_29
-lig_3:
+    type: dG
+    unit: kcal/mol
+    value: -11.7847
+  name: lig_CHEMBL3265024
+lig_CHEMBL3265025:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 3.8
-  name: lig_3
-lig_30:
+    type: dG
+    unit: kcal/mol
+    value: -10.1995
+  name: lig_CHEMBL3265025
+lig_CHEMBL3265026:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 64.1
-  name: lig_30
-lig_31:
+    type: dG
+    unit: kcal/mol
+    value: -11.3613
+  name: lig_CHEMBL3265026
+lig_CHEMBL3265027:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 17.7
-  name: lig_31
-lig_32:
+    type: dG
+    unit: kcal/mol
+    value: -10.3299
+  name: lig_CHEMBL3265027
+lig_CHEMBL3265028:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 1.5
-  name: lig_32
-lig_33:
+    type: dG
+    unit: kcal/mol
+    value: -11.0103
+  name: lig_CHEMBL3265028
+lig_CHEMBL3265029:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 50.2
-  name: lig_33
-lig_34:
+    type: dG
+    unit: kcal/mol
+    value: -11.1253
+  name: lig_CHEMBL3265029
+lig_CHEMBL3265030:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 3.9
-  name: lig_34
-lig_35:
+    type: dG
+    unit: kcal/mol
+    value: -11.4719
+  name: lig_CHEMBL3265030
+lig_CHEMBL3265031:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 12.3
-  name: lig_35
-lig_36:
+    type: dG
+    unit: kcal/mol
+    value: -12.0789
+  name: lig_CHEMBL3265031
+lig_CHEMBL3265032:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 12.6
-  name: lig_36
-lig_37:
+    type: dG
+    unit: kcal/mol
+    value: -11.0688
+  name: lig_CHEMBL3265032
+lig_CHEMBL3265033:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 11.0
-  name: lig_37
-lig_38:
+    type: dG
+    unit: kcal/mol
+    value: -11.8386
+  name: lig_CHEMBL3265033
+lig_CHEMBL3265034:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 28.3
-  name: lig_38
-lig_39:
+    type: dG
+    unit: kcal/mol
+    value: -11.4873
+  name: lig_CHEMBL3265034
+lig_CHEMBL3265035:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 10.4
-  name: lig_39
-lig_4:
+    type: dG
+    unit: kcal/mol
+    value: -11.0766
+  name: lig_CHEMBL3265035
+lig_CHEMBL3265036:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 113.0
-  name: lig_4
-lig_40:
+    type: dG
+    unit: kcal/mol
+    value: -10.4179
+  name: lig_CHEMBL3265036
+lig_CHEMBL3265037:
   measurement:
     error: -1
-    type: ic50
-    unit: nM
-    value: 466.0
-  name: lig_40
-lig_41:
-  measurement:
-    error: -1
-    type: ic50
-    unit: nM
-    value: 27.1
-  name: lig_41
-lig_42:
-  measurement:
-    error: -1
-    type: ic50
-    unit: nM
-    value: 3.8
-  name: lig_42
-lig_43:
-  measurement:
-    error: -1
-    type: ic50
-    unit: nM
-    value: 2.2
-  name: lig_43
-lig_44:
-  measurement:
-    error: -1
-    type: ic50
-    unit: nM
-    value: 37.4
-  name: lig_44
-lig_5:
-  measurement:
-    error: -1
-    type: ic50
-    unit: nM
-    value: 23.1
-  name: lig_5
-lig_6:
-  measurement:
-    error: -1
-    type: ic50
-    unit: nM
-    value: 8.6
-  name: lig_6
-lig_7:
-  measurement:
-    error: -1
-    type: ic50
-    unit: nM
-    value: 20.9
-  name: lig_7
-lig_8:
-  measurement:
-    error: -1
-    type: ic50
-    unit: nM
-    value: 16.5
-  name: lig_8
-lig_9:
-  measurement:
-    error: -1
-    type: ic50
-    unit: nM
-    value: 2.1
-  name: lig_9
+    type: dG
+    unit: kcal/mol
+    value: -12.7646
+  name: lig_CHEMBL3265037
