@@ -63,6 +63,7 @@ def write_perts_file(
                 ]
             )
 
+
 def write_analysis_file(analysis, results_dir: str, method=None):
     """write the analysis file for the analysis object
 
@@ -106,7 +107,18 @@ def write_analysis_file(analysis, results_dir: str, method=None):
         if os.path.getsize(final_summary_file) == 0:
             logging.info(f"Starting {final_summary_file} file.")
             writer.writerow(
-                ["lig_0", "lig_1", "freenrg", "error", "lower_ci", "upper_ci", "CI", "engine", "analysis", "method"]
+                [
+                    "lig_0",
+                    "lig_1",
+                    "freenrg",
+                    "error",
+                    "lower_ci",
+                    "upper_ci",
+                    "CI",
+                    "engine",
+                    "analysis",
+                    "method",
+                ]
             )
 
     with open(final_summary_file, "r") as freenrg_readfile:
@@ -413,7 +425,7 @@ def write_modified_results_files(
                         logging.error("was nan string method")
                     else:
                         logging.error("it was not None or nan")
-                        pass                   
+                        pass
 
                     # write the row
                     writer.writerow(

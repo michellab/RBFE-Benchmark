@@ -76,8 +76,7 @@ class make_dict:
             ana_string = "unspecified"
 
         if engine and name:
-            raise ValueError(
-                "can only have engine or name currently for nameing")
+            raise ValueError("can only have engine or name currently for nameing")
 
         # make a dictionary with the results of the files
         comp_dict_list = {}
@@ -120,16 +119,14 @@ class make_dict:
                     if not isinstance(row["freenrg"], float):
                         # to convert as it will be a string
                         ddG = BSS.Types.Energy(
-                            float(row["freenrg"].split()[0]
-                                  ), row["freenrg"].split()[-1]
+                            float(row["freenrg"].split()[0]), row["freenrg"].split()[-1]
                         ).value()
                         ddG_unit = row["freenrg"].split()[-1]
                     else:
                         ddG = row["freenrg"]
                     if not isinstance(row["error"], float):
                         ddG_err = BSS.Types.Energy(
-                            float(row["error"].split()[0]
-                                  ), row["error"].split()[-1]
+                            float(row["error"].split()[0]), row["error"].split()[-1]
                         ).value()
                         ddG_err_unit = row["error"].split()[-1]
                     else:
@@ -514,8 +511,7 @@ class make_dict:
                 new_exper_val_dict.update({lig: (exper_dG, exper_err)})
 
         if normalise:
-            normalised_exper_val_dict = make_dict._normalise_data(
-                new_exper_val_dict)
+            normalised_exper_val_dict = make_dict._normalise_data(new_exper_val_dict)
             return normalised_exper_val_dict
         else:
             return new_exper_val_dict
@@ -547,7 +543,8 @@ class make_dict:
             except Exception as e:
                 logging.error(e)
                 logging.error(
-                    f"the experimental pert value for {pert} could not be computed and will be left empty. Is the ligand in the experimental file?")
+                    f"the experimental pert value for {pert} could not be computed and will be left empty. Is the ligand in the experimental file?"
+                )
                 exper_ddG = None
                 exper_err = None
 
@@ -588,11 +585,10 @@ class make_dict:
             for key in data_dict:
                 try:
                     normalised_dict.update(
-                        {key: (float(data_dict[key][0]) -
-                            avg_val, data_dict[key][1])}
+                        {key: (float(data_dict[key][0]) - avg_val, data_dict[key][1])}
                     )  # also incl error
                 except:
-                    pass # if there is no value, can't update so skip
+                    pass  # if there is no value, can't update so skip
 
             return normalised_dict
 

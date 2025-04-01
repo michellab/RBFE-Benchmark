@@ -28,8 +28,7 @@ class protocol:
                 is_file = True
             except Exception as e:
                 logging.error(e)
-                logging.error(
-                    "Not recognised as file, trying to read as dictionary...")
+                logging.error("Not recognised as file, trying to read as dictionary...")
                 is_file = False
 
             if not is_file:
@@ -47,11 +46,9 @@ class protocol:
             if not is_file and not is_dict:
                 try:
                     if protocol_type == "pipeline":
-                        prot = validate.pipeline_protocol(
-                            file, auto_validate=False)
+                        prot = validate.pipeline_protocol(file, auto_validate=False)
                     elif protocol_type == "analysis":
-                        prot = validate.analysis_protocol(
-                            file, auto_validate=False)
+                        prot = validate.analysis_protocol(file, auto_validate=False)
 
                     self._query_dict = prot.dictionary()
 
@@ -68,8 +65,7 @@ class protocol:
                     self._query_dict = {}
 
         else:
-            logging.info(
-                "no file or dict passed, using entirely default values...")
+            logging.info("no file or dict passed, using entirely default values...")
             # set the query dict as the default dict
             self._query_dict = self.default_dict()
 
@@ -898,8 +894,7 @@ class pipeline_protocol(protocol):
                 try:
                     value = validate.is_float(value)
                 except:
-                    raise ValueError(
-                        "hmr_factor must be 'auto' or a integer/float")
+                    raise ValueError("hmr_factor must be 'auto' or a integer/float")
 
             self._hmr_factor = value
             self._query_dict["hmr factor"] = value
@@ -997,9 +992,8 @@ class pipeline_protocol(protocol):
             value = self._eq_timestep
 
         return value
-    
-    def config_options(self, value: Optional[dict] = None) -> dict:
 
+    def config_options(self, value: Optional[dict] = None) -> dict:
         if value:
             try:
                 value = validate.file_path(value)
@@ -1017,8 +1011,7 @@ class pipeline_protocol(protocol):
                     self._query_dict["config options"] = value_dict
                     self._config_options = value_dict
                 except:
-                    logging.error(
-                        f"could not validate config options, {value}")
+                    logging.error(f"could not validate config options, {value}")
                     value_dict = self._config_dict()
                     self._config_options = value_dict
         else:
@@ -1037,8 +1030,7 @@ class pipeline_protocol(protocol):
                 self._query_dict["config options file"] = value
                 self._config_options_file = value
             except:
-                logging.error(
-                    f"could not validate config options file path, {value}")
+                logging.error(f"could not validate config options file path, {value}")
                 value = None
                 self._config_options_file = value
         else:

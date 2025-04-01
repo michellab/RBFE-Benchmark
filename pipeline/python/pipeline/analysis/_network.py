@@ -91,14 +91,16 @@ class network_graph:
 
         self.graph = graph
 
-    def draw_graph(self, file_dir: Optional[str] = None,
-                   title=None,
-                   edge_labels: str = True,
-                   figsize: tuple = None,
-                   networkx_layout_func=None,
-                   layout_func_kwargs: dict ={},
-                   dot_graph: bool = False,
-                   ):
+    def draw_graph(
+        self,
+        file_dir: Optional[str] = None,
+        title=None,
+        edge_labels: str = True,
+        figsize: tuple = None,
+        networkx_layout_func=None,
+        layout_func_kwargs: dict = {},
+        dot_graph: bool = False,
+    ):
         """draw the network x graph.
 
         Args:
@@ -120,7 +122,6 @@ class network_graph:
             dot_graph.write_png(network_plot)
 
         else:
-
             # Plot the networkX graph.
             if networkx_layout_func:
                 func = networkx_layout_func
@@ -130,11 +131,13 @@ class network_graph:
 
             # default fig size based on network size
             if not figsize:
-                figsize = (graph.number_of_nodes(),# * 2,
-                        graph.number_of_nodes())# * 2)
+                figsize = (
+                    graph.number_of_nodes(),  # * 2,
+                    graph.number_of_nodes(),
+                )  # * 2)
 
             fig, ax = plt.subplots(
-                figsize=figsize, dpi=100*(math.ceil(graph.number_of_nodes()/100))
+                figsize=figsize, dpi=100 * (math.ceil(graph.number_of_nodes() / 100))
             )
 
             if self.calc_pert_dict:
@@ -165,22 +168,24 @@ class network_graph:
             )
             if draw_edge_labels:
                 nx.draw_networkx_edge_labels(
-                    graph, pos,
-                    edge_labels={(u, v): format(graph[u][v]['value'], ".2f") for u, v in graph.edges},
-                    font_color='navy',
+                    graph,
+                    pos,
+                    edge_labels={
+                        (u, v): format(graph[u][v]["value"], ".2f")
+                        for u, v in graph.edges
+                    },
+                    font_color="navy",
                     font_size=16,
-                    label_pos=0.45
+                    label_pos=0.45,
                 )
                 title = f"{title}\n ddG in kcal/mol"
 
-            plt.title(
-                f"{title}", fontdict={"fontsize": graph.number_of_nodes()}
-            )
+            plt.title(f"{title}", fontdict={"fontsize": graph.number_of_nodes()})
 
             if cmap_col:
                 sm = plt.cm.ScalarMappable(
-                    cmap=cmap_col, norm=plt.Normalize(
-                        vmin=min(weights), vmax=max(weights))
+                    cmap=cmap_col,
+                    norm=plt.Normalize(vmin=min(weights), vmax=max(weights)),
                 )
                 cbar = plt.colorbar(sm, shrink=0.5, location="bottom", aspect=50)
                 cbar.set_label(label="error (kcal/mol)", size=15)
@@ -195,7 +200,9 @@ class network_graph:
                 xa, ya = trans2((xx, yy))  # axes coordinates
                 a = plt.axes([xa - p2, ya - p2, piesize, piesize])
                 a.set_aspect("equal")
-                a.imshow(ImageOps.expand(graph.nodes[n]["image"], border=2, fill="black"))
+                a.imshow(
+                    ImageOps.expand(graph.nodes[n]["image"], border=2, fill="black")
+                )
                 a.set_title(f"{n}", y=0.85)
                 a.axis("off")
 
@@ -209,8 +216,7 @@ class network_graph:
 
     def _ligand_image(self, ligand: str):
         if not self.ligands_folder:
-            raise ValueError(
-                "please provide a ligands dir w the files inside.")
+            raise ValueError("please provide a ligands dir w the files inside.")
 
         m = Chem.SDMolSupplier(f"{self.ligands_folder}/{ligand}.sdf")[0]
         smi = Chem.MolToSmiles(m)
@@ -235,7 +241,9 @@ class network_graph:
 
         return fig
 
-    def draw_all_ligands(self, file_dir: Optional[str] = None, figsize: tuple = (10, 15)):
+    def draw_all_ligands(
+        self, file_dir: Optional[str] = None, figsize: tuple = (10, 15)
+    ):
         """draw all the ligands in the network.
 
         Args:
@@ -250,8 +258,7 @@ class network_graph:
         """
 
         if not self.ligands_folder:
-            raise ValueError(
-                "please provide a ligands dir w the files inside.")
+            raise ValueError("please provide a ligands dir w the files inside.")
 
         len_ligs = len(self.ligands)
 
@@ -366,8 +373,7 @@ class network_graph:
                         )
                         break
 
-            cycles_dict.update(
-                {"_".join(cycle): (sum(cycle_val), sum(cycle_val_err))})
+            cycles_dict.update({"_".join(cycle): (sum(cycle_val), sum(cycle_val_err))})
 
         self.cycles_dict = cycles_dict
 
@@ -446,13 +452,11 @@ class network_graph:
                 possible_paths = nx.all_simple_edge_paths(G, node_i, node_j)
                 sum_of_weighted_averaged_paths = sum(
                     [
-                        np.average([G.get_edge_data(*edge)["weight"]
-                                   for edge in path])
+                        np.average([G.get_edge_data(*edge)["weight"] for edge in path])
                         for path in possible_paths
                     ]
                 )
-                paths_per_nodepair_combination.append(
-                    sum_of_weighted_averaged_paths)
+                paths_per_nodepair_combination.append(sum_of_weighted_averaged_paths)
 
         # no of possible paths between each two nodes on average
         return np.average(paths_per_nodepair_combination)

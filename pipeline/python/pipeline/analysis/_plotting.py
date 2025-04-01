@@ -39,8 +39,7 @@ class plotting_engines:
             self._analysis_obj_into_format()
             self._analysis_obj_dicts_into_format()
         else:
-            raise ValueError(
-                "please provide an analysis object to be plotted for.")
+            raise ValueError("please provide an analysis object to be plotted for.")
 
         # place to write results to
         if not results_folder:
@@ -48,15 +47,13 @@ class plotting_engines:
             self.results_folder = self._analysis_object.results_folder
             self.graph_folder = self._analysis_object.graph_dir
         else:
-            self.results_folder = validate.folder_path(
-                results_folder, create=True)
+            self.results_folder = validate.folder_path(results_folder, create=True)
             self.graph_folder = validate.folder_path(
                 f"{results_folder}/graphs", create=True
             )
 
         # set the colours
-        self.colours = set_colours(
-            other_results_names=self.other_results_names)
+        self.colours = set_colours(other_results_names=self.other_results_names)
 
         # convert the dictionaries into dataframes for plotting
         self._analysis_dicts_to_df()
@@ -234,11 +231,11 @@ class plotting_engines:
                 # put results into values dict
                 values_dict[eng]["pert_results"] = self.calc_pert_dict[eng]
                 values_dict[eng]["val_results"] = self.calc_val_dict[eng]
-                
+
                 try:
                     values_dict[eng]["bound_results"] = self.calc_bound_dict[eng]
                     values_dict[eng]["free_results"] = self.calc_free_dict[eng]
-                except: # if added later there may not be bound and free results
+                except:  # if added later there may not be bound and free results
                     logging.error("didnt free bound")
                     values_dict[eng]["bound_results"] = {
                         x: (None, None) for x in pert_lig[0]
@@ -370,8 +367,7 @@ class plotting_engines:
                 freenrg_dict[value] = [x_ddG, x_err, y_ddG, y_err]
             except Exception as e:
                 logging.error(e)
-                logging.error(
-                    f"{value} not in both dicts, {x_name} and {y_name}")
+                logging.error(f"{value} not in both dicts, {x_name} and {y_name}")
 
         freenrg_df = pd.DataFrame(
             freenrg_dict,
@@ -542,8 +538,7 @@ class plotting_engines:
     def _parse_kwargs_graphs(self, graph: str = None, **kwargs):
         graph = validate.string(graph).upper()
         if graph not in ["BAR", "SCATTER", "OUTLIER"]:
-            raise ValueError(
-                f"graph argument must be bar, scatter or outlier.")
+            raise ValueError(f"graph argument must be bar, scatter or outlier.")
 
         # default
         y_label = None
@@ -808,8 +803,7 @@ class plotting_engines:
             ].dropna()
 
             # prune df to only have perturbations considered
-            freenrg_df_plotting = self._prune_perturbations(
-                freenrg_df_plotting, values)
+            freenrg_df_plotting = self._prune_perturbations(freenrg_df_plotting, values)
 
             x = freenrg_df_plotting[f"freenrg_{x_name}"]
             y = freenrg_df_plotting["freenrg_calc"]
@@ -829,8 +823,7 @@ class plotting_engines:
                 mue_values = abs(x - y)
 
                 # find the n ligand names that are outliers.
-                outlier_names = mue_values.nlargest(
-                    no_outliers).index.values.tolist()
+                outlier_names = mue_values.nlargest(no_outliers).index.values.tolist()
                 logging.info(f"outlier names for {y_name} are {outlier_names}")
 
                 # construct a list of labels to annotate the scatterplot with.
@@ -871,11 +864,9 @@ class plotting_engines:
                     plt.annotate(
                         txt,
                         (
-                            freenrg_df_plotting[f"freenrg_{x_name}"].values.tolist()[
-                                i]
+                            freenrg_df_plotting[f"freenrg_{x_name}"].values.tolist()[i]
                             + 0.1,  # x coords
-                            freenrg_df_plotting["freenrg_calc"].values.tolist()[
-                                i]
+                            freenrg_df_plotting["freenrg_calc"].values.tolist()[i]
                             + 0.1,
                         ),  # y coords
                         size=15,
@@ -1133,8 +1124,7 @@ class plotting_histogram(plotting_engines):
             except:
                 pass
         else:
-            raise ValueError(
-                "please provide an analysis object to be plotted for.")
+            raise ValueError("please provide an analysis object to be plotted for.")
 
         # place to write results to
         if not results_folder:
@@ -1142,14 +1132,12 @@ class plotting_histogram(plotting_engines):
             self.results_folder = self._analysis_object.results_folder
             self.graph_folder = self._analysis_object.graph_dir
         else:
-            self.results_folder = validate.folder_path(
-                results_folder, create=True)
+            self.results_folder = validate.folder_path(results_folder, create=True)
             self.graph_folder = validate.folder_path(
                 f"{results_folder}/graphs", create=True
             )
         # set the colours
-        self.colours = set_colours(
-            other_results_names=self.other_results_names)
+        self.colours = set_colours(other_results_names=self.other_results_names)
 
         # set the dictionary for histograms
         self._files_into_error_lists()
@@ -1215,8 +1203,7 @@ class plotting_histogram(plotting_engines):
         ci = norm.interval(0.95, loc=mu, scale=se)  # confidence interval
 
         # plot histogram
-        plt.hist(x, bins=no_bins, density=True,
-                 alpha=0.7, color=col, edgecolor="grey")
+        plt.hist(x, bins=no_bins, density=True, alpha=0.7, color=col, edgecolor="grey")
 
         # Plot the PDF.
         xmin, xmax = plt.xlim()

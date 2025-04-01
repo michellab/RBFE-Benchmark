@@ -25,7 +25,13 @@ from typing import List as _List
 from alchemlyb.postprocessors.units import to_kcalmol, to_kJmol, to_kT
 from alchemlyb.visualisation import plot_mbar_overlap_matrix, plot_ti_dhdl
 from alchemlyb.visualisation import plot_convergence as _plot_convergence
-from alchemlyb.preprocessing import decorrelate_dhdl, dhdl2series, decorrelate_u_nk, u_nk2series, slicing
+from alchemlyb.preprocessing import (
+    decorrelate_dhdl,
+    dhdl2series,
+    decorrelate_u_nk,
+    u_nk2series,
+    slicing,
+)
 from pymbar.timeseries import detect_equilibration as _detect_equilibration
 from alchemlyb.convergence import fwdrev_cumavg_Rc, A_c, forward_backward_convergence
 
@@ -57,10 +63,8 @@ class analyse:
         # instantiate the class with the work directory
 
         self._work_dir = validate.folder_path(work_dir)
-        self._pickle_dir = validate.folder_path(
-            f"{self._work_dir}/pickle", create=True)
-        self._graph_dir = validate.folder_path(
-            self._work_dir + "/graphs", create=True)
+        self._pickle_dir = validate.folder_path(f"{self._work_dir}/pickle", create=True)
+        self._graph_dir = validate.folder_path(self._work_dir + "/graphs", create=True)
         self._edgembar_dir = validate.folder_path(
             self._work_dir + "/edgembar_dats", create=True
         )
@@ -100,8 +104,7 @@ class analyse:
                     for eng in BSS.FreeEnergy.engines():
                         if eng.upper() in self._work_dir.upper():
                             self.engine = validate.engine(eng)
-                            logging.info(
-                                f"found {eng.upper()} as engine in work_dir")
+                            logging.info(f"found {eng.upper()} as engine in work_dir")
             except Exception as e:
                 logging.exception(e)
                 logging.critical(
@@ -149,8 +152,7 @@ class analyse:
         self.free_calculated = []
 
         if analysis_prot:
-            analysis_prot = analysis_protocol(
-                analysis_prot, auto_validate=True)
+            analysis_prot = analysis_protocol(analysis_prot, auto_validate=True)
             self.set_options(analysis_prot)
 
     @staticmethod
@@ -329,8 +331,7 @@ class analyse:
             options_dict["try pickle"] = try_pickle
 
         if "auto equilibration" in options_dict:
-            auto_equilibration = validate.boolean(
-                options_dict["auto equilibration"])
+            auto_equilibration = validate.boolean(options_dict["auto equilibration"])
             options_dict["auto equilibration"] = auto_equilibration
 
         if "statistical inefficiency" in options_dict:
@@ -340,13 +341,11 @@ class analyse:
             options_dict["statistical inefficiency"] = statistical_inefficiency
 
         if "truncate upper" in options_dict:
-            truncate_upper = validate.integer(
-                options_dict["truncate upper"])
+            truncate_upper = validate.integer(options_dict["truncate upper"])
             options_dict["truncate upper"] = truncate_upper
 
         if "truncate lower" in options_dict:
-            truncate_lower = validate.integer(
-                options_dict["truncate lower"])
+            truncate_lower = validate.integer(options_dict["truncate lower"])
             options_dict["truncate lower"] = truncate_lower
 
         if "name" in options_dict:
@@ -485,8 +484,7 @@ class analyse:
         if do_pickle:
             freenrg_rel, repeats_tuple_list = self._analyse_all_repeats_pickle()
             if freenrg_rel[0] is np.nan:
-                logging.info(
-                    "loaded pickle is None. Will try calculating again...")
+                logging.info("loaded pickle is None. Will try calculating again...")
                 do_pickle = False
 
         if not do_pickle:
@@ -507,8 +505,7 @@ class analyse:
 
         if self._save_pickle:
             if do_pickle:
-                logging.info(
-                    "already using pickles, will not be saving again.")
+                logging.info("already using pickles, will not be saving again.")
             else:
                 logging.info(
                     "saving the pmf dictionaries for bound and free as pickles."
@@ -516,7 +513,8 @@ class analyse:
             self.save_pickle()
 
         logging.info(
-            f"The freenerg is {self.freenrg} +/- {self.error}. The {self._confidence_interval*100} CI is [{self.lower_ci}, {self.upper_ci}]")
+            f"The freenerg is {self.freenrg} +/- {self.error}. The {self._confidence_interval*100} CI is [{self.lower_ci}, {self.upper_ci}]"
+        )
 
         return (freenrg_rel[0], freenrg_rel[1], repeats_tuple_list)
 
@@ -545,9 +543,18 @@ class analyse:
         else:
             for leg in self._b_folders + self._f_folders:
                 validate.folder_path(f"{self._work_dir}/{leg}/prod", create=True)
-                list_dir = sorted([folder_name for folder_name in os.listdir(f"{self._work_dir}/{leg}") if "lambda" in folder_name])
+                list_dir = sorted(
+                    [
+                        folder_name
+                        for folder_name in os.listdir(f"{self._work_dir}/{leg}")
+                        if "lambda" in folder_name
+                    ]
+                )
                 for lambda_folder in list_dir:
-                    shutil.move(f"{self._work_dir}/{leg}/{lambda_folder}", f"{self._work_dir}/{leg}/prod/{lambda_folder}")
+                    shutil.move(
+                        f"{self._work_dir}/{leg}/{lambda_folder}",
+                        f"{self._work_dir}/{leg}/prod/{lambda_folder}",
+                    )
 
         # Analyse the results for each leg of the transformation.
         for b in self._b_repeats:
@@ -596,8 +603,7 @@ class analyse:
                 )
                 bound_err = BSS.Types.Energy(
                     math.sqrt(
-                        math.pow(
-                            self._bound_pmf_dict[bound_name][-1][2].value(), 2)
+                        math.pow(self._bound_pmf_dict[bound_name][-1][2].value(), 2)
                         + math.pow(self._bound_pmf_dict[bound_name][0][2].value(), 2)
                     ),
                     self._bound_pmf_dict[bound_name][-1][2].unit(),
@@ -619,8 +625,7 @@ class analyse:
                 )
                 free_err = BSS.Types.Energy(
                     math.sqrt(
-                        math.pow(
-                            self._free_pmf_dict[free_name][-1][2].value(), 2)
+                        math.pow(self._free_pmf_dict[free_name][-1][2].value(), 2)
                         + math.pow(self._free_pmf_dict[free_name][0][2].value(), 2)
                     ),
                     self._free_pmf_dict[free_name][-1][2].unit(),
@@ -767,12 +772,10 @@ class analyse:
             )
             freenrg_val = freenrg_rel_rep[0]
             freenrg_err = freenrg_rel_rep[1]
-            repeats_tuple_list.append(
-                (f"{str(r)}_repeat", freenrg_val, freenrg_err))
+            repeats_tuple_list.append((f"{str(r)}_repeat", freenrg_val, freenrg_err))
             r += 1
 
-        freenrg_sd = np.std(np.array([r[1].value()
-                            for r in repeats_tuple_list]))
+        freenrg_sd = np.std(np.array([r[1].value() for r in repeats_tuple_list]))
         self.freenrg_sd = freenrg_sd
 
         return freenrg_rel, repeats_tuple_list
@@ -902,8 +905,7 @@ class analyse:
                         )
                     except Exception as e:
                         logging.exception(e)
-                        logging.error(
-                            f"could not plt overlap matrix for {name}")
+                        logging.error(f"could not plt overlap matrix for {name}")
 
                 for f in self._f_repeats:
                     try:
@@ -915,8 +917,7 @@ class analyse:
                         )
                     except Exception as e:
                         logging.exception(e)
-                        logging.error(
-                            f"could not plt overlap matrix for {name}")
+                        logging.error(f"could not plt overlap matrix for {name}")
 
             elif self.estimator == "TI":
                 for b in self._b_repeats:
@@ -943,7 +944,7 @@ class analyse:
                         logging.exception(e)
                         logging.error(f"could not plt dhdl for {name}")
 
-    def confidence_interval(self, confidence_interval: float=0.95):
+    def confidence_interval(self, confidence_interval: float = 0.95):
         """calculate the confidence of the edge. This is very large as there are not that many replicas generally.
 
         Args:
@@ -960,46 +961,49 @@ class analyse:
         # check more than one run has been carried out
         if self.no_of_repeats < 2:
             warnings.warn(
-                "will not calculate CI as there is only one repeat calculated.")
+                "will not calculate CI as there is only one repeat calculated."
+            )
 
         # create 95% confidence interval
         # small sample so use t interval
         # if larger sample, use norm.interval() as assume sample mean is normally distributed due to central limit theorem
-        lower_ci, upper_ci = _stats.t.interval(confidence_interval, df=self.no_of_repeats-1,
-                                               loc=self.freenrg_val,  # mean
-                                               scale=self.freenrg_err,  # SEM
-                                               )
+        lower_ci, upper_ci = _stats.t.interval(
+            confidence_interval,
+            df=self.no_of_repeats - 1,
+            loc=self.freenrg_val,  # mean
+            scale=self.freenrg_err,  # SEM
+        )
 
         self.lower_ci = lower_ci
         self.upper_ci = upper_ci
 
     def check_repeat_convergence(self):
-        """check if the standard deviation of the repeats is less than 1.5 kcal/mol
-        """
+        """check if the standard deviation of the repeats is less than 1.5 kcal/mol"""
         # ((f"{str(r)}_repeat", freenrg_val, freenrg_err))
 
         try:
-            repeats_values = [repeat_val[1]
-                              for repeat_val in self.repeats_tuple_list]
+            repeats_values = [repeat_val[1] for repeat_val in self.repeats_tuple_list]
             standard_deviation_of_vals = stdev(repeats_values)
 
             threshold = 1.5
             if standard_deviation_of_vals < threshold:
                 logging.info(
-                    f"Standard deviation of the freenerg repeats is {standard_deviation_of_vals}, which is less than {threshold}. The freenrg is considered converged.")
+                    f"Standard deviation of the freenerg repeats is {standard_deviation_of_vals}, which is less than {threshold}. The freenrg is considered converged."
+                )
             else:
                 logging.error(
-                    f"Standard deviation of the freenerg repeats is {standard_deviation_of_vals}, which is more than {threshold}. The freenrg is NOT considered converged.")
+                    f"Standard deviation of the freenerg repeats is {standard_deviation_of_vals}, which is more than {threshold}. The freenrg is NOT considered converged."
+                )
         except:
             logging.error(
-                "could not check convergence / calculate the standard deviation of repeats.")
+                "could not check convergence / calculate the standard deviation of repeats."
+            )
             standard_deviation_of_vals = None
 
         return standard_deviation_of_vals
 
     def check_convergence(self):
-        """using alchemlyb functions.
-        """
+        """using alchemlyb functions."""
         converged_percen_dict = {}
         eq_dict = {}
         for leg in self._b_folders + self._f_folders:
@@ -1009,7 +1013,8 @@ class analyse:
                 )
 
                 u_nk = BSS.FreeEnergy.Relative._get_data(
-                    files, temperatures, self.engine, self.estimator)
+                    files, temperatures, self.engine, self.estimator
+                )
 
                 df = forward_backward_convergence(u_nk, self.estimator)
 
@@ -1019,10 +1024,12 @@ class analyse:
                 # define convergence by checking if forward and backward have the same free energy estimate within error
                 converged_no = 0
                 for row in range(0, len(df)):
-                    # error added 
-                    if abs(df["Forward"][row] - df["Backward"][row]) < [df["Forward_Error"][row] + df["Backward_Error"][row]]:
+                    # error added
+                    if abs(df["Forward"][row] - df["Backward"][row]) < [
+                        df["Forward_Error"][row] + df["Backward_Error"][row]
+                    ]:
                         converged_no += 1
-                converged_percen = converged_no/len(df)
+                converged_percen = converged_no / len(df)
 
             except Exception as e:
                 logging.error(e)
@@ -1032,19 +1039,23 @@ class analyse:
             converged_percen_dict[leg] = converged_percen
 
         if self._save_pickle:
-            with open(f"{self._pickle_dir}/converged_percen_dict_{self.pickle_extension}.pickle", "wb") as handle:
+            with open(
+                f"{self._pickle_dir}/converged_percen_dict_{self.pickle_extension}.pickle",
+                "wb",
+            ) as handle:
                 print(handle)
                 pickle.dump(converged_percen_dict, handle)
 
-            with open(f"{self._pickle_dir}/ac_{self.pickle_extension}.pickle", "wb") as handle:
+            with open(
+                f"{self._pickle_dir}/ac_{self.pickle_extension}.pickle", "wb"
+            ) as handle:
                 print(handle)
                 pickle.dump(eq_dict, handle)
 
         return converged_percen_dict
 
     def calculate_convergence(self, recalculate=False):
-        """calculate the convergence for average of the results.
-        """
+        """calculate the convergence for average of the results."""
 
         if self._try_pickle:
             do_pickle = self._check_convergence_pickle()
@@ -1126,8 +1137,7 @@ class analyse:
         return do_pickle
 
     def _save_convergence_pickle(self):
-        """save the convergence calculation pickle.
-        """
+        """save the convergence calculation pickle."""
 
         self._pickle_dir = validate.folder_path(self._pickle_dir, create=True)
         pickle_ext = self.pickle_extension.split("truncate")[0]
@@ -1165,30 +1175,38 @@ class analyse:
             logging.info("saved pickles!")
 
     def plot_convergence(self, use_alchemlyb=False):
-        """plot the convergence.
-        """
+        """plot the convergence."""
 
         if use_alchemlyb:
-
             for leg in self._b_folders + self._f_folders:
                 files, temperatures, lambdas = self.get_files_temperatures_lambdas(
                     f"{self._work_dir}/{leg}/prod"
                 )
 
                 u_nk = BSS.FreeEnergy.Relative._get_data(
-                    files, temperatures, self.engine, self.estimator)
+                    files, temperatures, self.engine, self.estimator
+                )
 
                 # plot convergence
                 df = forward_backward_convergence(u_nk, self.estimator)
                 ax = _plot_convergence(df)
                 ax.figure.savefig(
-                    f"{self._graph_dir}/forward_reverse_{leg}_{self.perturbation}_{self.file_extension.split('truncate')[0]}_alchemlyb.png")
+                    f"{self._graph_dir}/forward_reverse_{leg}_{self.perturbation}_{self.file_extension.split('truncate')[0]}_alchemlyb.png"
+                )
 
         else:
             try:
                 for from_start, from_end, leg in zip(
-                    [self.spert_results_dict, self.spert_bound_dict, self.spert_free_dict],
-                    [self.epert_results_dict, self.epert_bound_dict, self.epert_free_dict],
+                    [
+                        self.spert_results_dict,
+                        self.spert_bound_dict,
+                        self.spert_free_dict,
+                    ],
+                    [
+                        self.epert_results_dict,
+                        self.epert_bound_dict,
+                        self.epert_free_dict,
+                    ],
                     ["freenerg", "bound", "free"],
                 ):
                     sdf = analyse.single_pert_dict_into_df(from_start)
@@ -1207,7 +1225,8 @@ class analyse:
             except Exception as e:
                 logging.exception(e)
                 logging.error(
-                    "failed to plot convergence, please check Exception message.")
+                    "failed to plot convergence, please check Exception message."
+                )
 
     # not in use
     # def plot_equilibration(self, eq_lines=[], eq_line_labels=[]):
@@ -1250,10 +1269,8 @@ class analyse:
         eq: bool = False,
         try_pickle: bool = True,
         save_pickle: bool = True,
-        truncate_percentage: list = [
-            5, 10, 15, 20, 25, 30, 40, 50, 60, 80, 100],
+        truncate_percentage: list = [5, 10, 15, 20, 25, 30, 40, 50, 60, 80, 100],
     ) -> tuple:
-
         truncate_percentage = validate.is_list(truncate_percentage)
         for val in truncate_percentage:
             validate.integer(val)
@@ -1266,7 +1283,6 @@ class analyse:
         free_dict = {}
 
         for trunc_per in truncate_percentage:
-
             if start_end == "start":
                 trunc_lower = 0
                 trunc_upper = trunc_per
@@ -1294,10 +1310,8 @@ class analyse:
                 analysed_pert.freenrg_val,
                 analysed_pert.freenrg_err,
             )
-            bound_dict[trunc_per] = (
-                analysed_pert.bound_val, analysed_pert.bound_err)
-            free_dict[trunc_per] = (
-                analysed_pert.free_val, analysed_pert.free_err)
+            bound_dict[trunc_per] = (analysed_pert.bound_val, analysed_pert.bound_err)
+            free_dict[trunc_per] = (analysed_pert.free_val, analysed_pert.free_err)
 
         return results_dict, bound_dict, free_dict
 
@@ -1363,12 +1377,10 @@ class analyse:
 
         if eq_lines:
             # Add vertical lines for equilibration
-            line_colors = [cm.viridis(i/len(eq_lines))
-                           for i in range(len(eq_lines))]
+            line_colors = [cm.viridis(i / len(eq_lines)) for i in range(len(eq_lines))]
 
             for x_val, color, label in zip(eq_lines, line_colors, eq_line_labels):
-                lines += plt.axvline(x=x_val, color=color,
-                                     linestyle='--', label=label)
+                lines += plt.axvline(x=x_val, color=color, linestyle="--", label=label)
 
         if include_key:
             labels = [l.get_label() for l in lines]
@@ -1376,8 +1388,7 @@ class analyse:
 
         plt.xlabel("Percentage of run used")
         if file_path:
-            plt.title(
-                f"{file_path.split('/')[-1].split('.')[0].replace('_',' ')}")
+            plt.title(f"{file_path.split('/')[-1].split('.')[0].replace('_',' ')}")
         else:
             pass
 
@@ -1434,10 +1445,8 @@ class analyse:
                 free_pmf = self._free_pmf_dict[repf]
 
                 for pb, pf in zip(bound_pmf, free_pmf):
-                    freenrg_dict[pb[0]].append(
-                        (pb[1].value()) - (pf[1].value()))
-                    freenrg_err_dict[pb[0]].append(
-                        (pb[2].value()) + (pf[2].value()))
+                    freenrg_dict[pb[0]].append((pb[1].value()) - (pf[1].value()))
+                    freenrg_err_dict[pb[0]].append((pb[2].value()) + (pf[2].value()))
                     bound_dict[pb[0]].append(pb[1].value())
                     bound_err_dict[pb[0]].append(pb[2].value())
                     free_dict[pb[0]].append(pf[1].value())
@@ -1472,13 +1481,11 @@ class analyse:
                 lines += plt.plot(0, 0, c="cornflowerblue", label="freenrg")
 
                 plt.xlim(xmin=0, xmax=1)
-                plt.ylabel(
-                    "Computed $\Delta$$\Delta$G$_{perturbation}$ (kcal/mol)")
+                plt.ylabel("Computed $\Delta$$\Delta$G$_{perturbation}$ (kcal/mol)")
                 plt.xlabel("Lambda")
                 labels = [l.get_label() for l in lines]
                 plt.legend(lines, labels)
-                plt.title(
-                    f"Energy across lambda windows for {self.perturbation}")
+                plt.title(f"Energy across lambda windows for {self.perturbation}")
                 plt.savefig(
                     f"{self._graph_dir}/{self.perturbation}_across_lambda_windows_freenrg.png"
                 )
@@ -1508,14 +1515,14 @@ class analyse:
         else:
             try_pickle = self._try_pickle
         save_pickle = self._save_pickle
-        
+
         for leg in self._b_folders + self._f_folders:
             files, temperatures, lambdas = self.get_files_temperatures_lambdas(
                 f"{self._work_dir}/{leg}/prod"
             )
 
             u_nk = None
-            
+
             # extract u_nk
             if try_pickle:
                 try:
@@ -1533,23 +1540,26 @@ class analyse:
                 try:
                     logging.info("getting the unk")
                     u_nk = BSS.FreeEnergy.Relative._get_data(
-                        files, temperatures, self.engine, self.estimator)
+                        files, temperatures, self.engine, self.estimator
+                    )
                     # logging.info(type(u_nk))
                     # for df in u_nk:
-                        # logging.info(type(df))
+                    # logging.info(type(df))
                     try:
                         logging.info("preprocessing the data")
                         u_nk = BSS.FreeEnergy.Relative._preprocess_data(
-                            u_nk, estimator=self.estimator, **{
+                            u_nk,
+                            estimator=self.estimator,
+                            **{
                                 "truncate upper": self._truncate_upper,
                                 "truncate lower": self._truncate_lower,
                                 "autoequilibration": self._auto_equilibration,
                                 "statistical inefficiency": self._statistical_inefficiency,
-                            }
+                            },
                         )
                         # logging.info(type(u_nk))
                         # for df in u_nk:
-                            # logging.info(type(df))
+                        # logging.info(type(df))
                         logging.info("finished preprocessing data")
                     except Exception as e:
                         logging.error(e)
@@ -1569,7 +1579,7 @@ class analyse:
 
             # for the amber output format, this is not the val - ref but just the val.
             # as alchemlyb uses the val - ref, this needs to be added back to have the correct format
-            
+
             try:
                 kcal_u_nk = []
 
@@ -1577,10 +1587,9 @@ class analyse:
                 for df in u_nk:
                     new_df = to_kcalmol(df)
                     kcal_u_nk.append(new_df)
-                
+
                 logging.info("doing for the df")
                 for df in kcal_u_nk:
-
                     if self.engine == "AMBER":
                         lam_name = "lambdas"
                     elif self.engine == "SOMD" or self.engine == "GROMACS":
@@ -1591,18 +1600,18 @@ class analyse:
 
                     # for each of the energy lambda (elam)
                     for elam in df.columns:
-                        new_df = df[elam] # the df is the energy lambda
-                        ref_df = df[tlam] # the ref data is the tlam
+                        new_df = df[elam]  # the df is the energy lambda
+                        ref_df = df[tlam]  # the ref data is the tlam
                         # as alchemlyb uses df(alchemlyb) = val - ref , and amber output is just the val, the val = df(alchemlyb) + ref
                         val_df = new_df + ref_df
-                        newer_df = val_df.droplevel(lam_name) # the tlams are dropped from the row names
+                        newer_df = val_df.droplevel(
+                            lam_name
+                        )  # the tlams are dropped from the row names
                         final_df = newer_df.reset_index()
                         final_df["time"] = final_df["time"].round(1)
                         # need to replace any infinity values - this is the value used for infinity in the pymaberdats
-                        final_df.replace([np.inf, -np.inf],
-                                         100000.000000, inplace=True)
-                        final_df.replace(np.inf,
-                                         100000.000000, inplace=True)
+                        final_df.replace([np.inf, -np.inf], 100000.000000, inplace=True)
+                        final_df.replace(np.inf, 100000.000000, inplace=True)
 
                         folder = validate.folder_path(
                             f"{dats_folder}/{leg.split('_')[0]}/{leg.split('_')[1]}_{self.file_extension}",
@@ -1616,8 +1625,7 @@ class analyse:
                         )
             except Exception as e:
                 logging.error(e)
-                logging.error(
-                    f"failed to extract the edge to df for folder {leg}.")
+                logging.error(f"failed to extract the edge to df for folder {leg}.")
 
             # # for the amber output format, this is not the val - ref but just the val.
             # # as alchemlyb uses the val - ref, this needs to be added back to have the correct format
@@ -1665,7 +1673,7 @@ class analyse:
             #     except:
             #         logging.error(
             #             f"failed to extract the edge to df after folder {leg}, {tlam}, {elam}.")
-                    
+
             # for df in dhdl:
             #     # first column is simulation time, second column is the potential energy in kcal/mol of the elam state
             #     unit_df = to_kcalmol(df)
@@ -1734,8 +1742,7 @@ class analyse:
                         temp = None
                         start = "#Generating temperature is"
                         if start in line:
-                            split_line = (line.split(start)[
-                                          1]).strip().split(" ")
+                            split_line = (line.split(start)[1]).strip().split(" ")
                             temp = split_line[0]
                             unit = split_line[-1]
                             if unit.upper() == "C":
@@ -1763,8 +1770,7 @@ class analyse:
                         start = "T ="
                         end = "(K)"
                         if start and end in line:
-                            t = int(
-                                ((line.split(start)[1]).split(end)[0]).strip())
+                            t = int(((line.split(start)[1]).split(end)[0]).strip())
                             temperatures.append(float(t))
                             if t is not None:
                                 found_temperature = True
@@ -1778,7 +1784,6 @@ class analyse:
         return files, temperatures, lambdas
 
     def get_eq_times(self):
-
         eq_dict = {}
 
         for leg in self._b_folders + self._f_folders:
@@ -1788,31 +1793,32 @@ class analyse:
                 )
             except:
                 logging.error(
-                    f"could not extract files and temperatures for {self.perturbation}, {self.engine}, {leg} for get eq times.")
+                    f"could not extract files and temperatures for {self.perturbation}, {self.engine}, {leg} for get eq times."
+                )
 
             try:
                 # extract u_nk
                 u_nk = BSS.FreeEnergy.Relative._get_u_nk(
-                    files, temperatures, self.engine)
+                    files, temperatures, self.engine
+                )
 
-                eq_time_frac = [
-                    self._get_eq_time(i)
-                    for i in u_nk
-                ]
+                eq_time_frac = [self._get_eq_time(i) for i in u_nk]
                 mean = np.mean(eq_time_frac)
             except:
                 logging.error(
-                    f"could not get eq times for {self.perturbation}, {self.engine}, {leg}")
+                    f"could not get eq times for {self.perturbation}, {self.engine}, {leg}"
+                )
                 eq_time_frac = []
                 mean = None
 
-            logging.info(
-                f"fractional equilibration times for {leg} was {eq_time_frac}")
+            logging.info(f"fractional equilibration times for {leg} was {eq_time_frac}")
             logging.info(f"the average frac eq time for {leg} was {mean}")
 
             eq_dict[leg] = {"times": eq_time_frac, "mean": mean}
 
-        with open(f"{self._pickle_dir}/eq_times_{self.pickle_extension}.pickle", "wb") as handle:
+        with open(
+            f"{self._pickle_dir}/eq_times_{self.pickle_extension}.pickle", "wb"
+        ) as handle:
             print(handle)
             pickle.dump(eq_dict, handle)
 
@@ -1821,7 +1827,6 @@ class analyse:
         df.to_csv(f"{self._work_dir}/eq_dats/equlibration_times.dat")
 
         return eq_dict
-
 
     def check_Ac(self):
         """
@@ -1869,32 +1874,36 @@ class analyse:
                 )
             except:
                 logging.error(
-                    f"could not extract files and temperatures for {self.perturbation}, {self.engine}, {leg} for get Ac.")
+                    f"could not extract files and temperatures for {self.perturbation}, {self.engine}, {leg} for get Ac."
+                )
 
             try:
                 # extract u_nk
-                u_nk = BSS.FreeEnergy.Relative._get_u_nk(files, temperatures, self.engine)
+                u_nk = BSS.FreeEnergy.Relative._get_u_nk(
+                    files, temperatures, self.engine
+                )
 
                 ac = A_c([u_nk2series(_u_nk) for _u_nk in u_nk], precision=0.01, tol=2)
                 eq_dict[leg] = ac
 
             except:
                 logging.error(
-                    f"could not get Ac for {self.perturbation}, {self.engine}, {leg}")
+                    f"could not get Ac for {self.perturbation}, {self.engine}, {leg}"
+                )
                 eq_dict[leg] = None
-            
-            logging.info(
-                f"Ac for {leg} was {ac}")
 
-        with open(f"{self._pickle_dir}/ac_{self.pickle_extension}.pickle", "wb") as handle:
+            logging.info(f"Ac for {leg} was {ac}")
+
+        with open(
+            f"{self._pickle_dir}/ac_{self.pickle_extension}.pickle", "wb"
+        ) as handle:
             print(handle)
             pickle.dump(eq_dict, handle)
 
         return eq_dict
-    
+
     @staticmethod
     def _get_eq_time(df):
-
         lower = None
         upper = None
         step = None
@@ -1906,12 +1915,11 @@ class analyse:
         # calculate statistical inefficiency of series, with equilibrium detection
         t, statinef, Neff_max = _detect_equilibration(series.values)
 
-        equil_time_frac = 1 - len(df[t:])/len(df)
+        equil_time_frac = 1 - len(df[t:]) / len(df)
 
         return equil_time_frac
 
     def equil_paired_t(self, update_results=True):
-
         update_results = validate.boolean(update_results)
 
         validate.folder_path(f"{self._work_dir}/t-test", create=True)
@@ -1922,9 +1930,9 @@ class analyse:
 
         if fractional_equil_time and update_results:
             logging.info(
-                f"Reanalysing results with equilibration time set to {fractional_equil_time*100}%...")
-            self.set_options({"truncate lower": fractional_equil_time*100})
+                f"Reanalysing results with equilibration time set to {fractional_equil_time*100}%..."
+            )
+            self.set_options({"truncate lower": fractional_equil_time * 100})
             self.analyse_all_repeats()
 
         return fractional_equil_time
- 

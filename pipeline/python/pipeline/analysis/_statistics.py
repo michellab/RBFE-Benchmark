@@ -108,7 +108,7 @@ class stats_engines(plotting_engines):
         xerr: Optional[list] = None,
         yerr: Optional[list] = None,
         statistic: str = None,
-        nbootstrap: int = 10000
+        nbootstrap: int = 10000,
     ) -> tuple:
         """static method for computing various statistics.
 
@@ -135,7 +135,7 @@ class stats_engines(plotting_engines):
         s = stats.bootstrap_statistic(
             x, y, xerr, yerr, nbootstrap=nbootstrap, statistic=statistic
         )
-        values = (s["mle"], s["stderr"], [s['low'], s['high']])
+        values = (s["mle"], s["stderr"], [s["low"], s["high"]])
         # string = f"{statistic}:   {s['mle']:.2f} [95%: {s['low']:.2f}, {s['high']:.2f}] " + "\n"
 
         return values

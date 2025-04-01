@@ -44,7 +44,7 @@ def check_hmr(
             if hmr_factor == "auto":
                 hmr_factor = 3
             else:
-                pass # existing hmr factor
+                pass  # existing hmr factor
         # SOMD factor set during relative from the protocol.
 
         # Extract the molecules to which HMR applies.
@@ -169,8 +169,7 @@ class fepprep:
                 "please add a system for bound with lig0 and bound with lig1 and merge these"
             )
 
-        self._pipeline_protocol = validate.pipeline_protocol(
-            protocol, fepprep=True)
+        self._pipeline_protocol = validate.pipeline_protocol(protocol, fepprep=True)
         # generate the BSS protocols from the pipeline protocol
         fepprep._generate_bss_protocols(self)
 
@@ -222,15 +221,11 @@ class fepprep:
         kwarg_dict = {"ALIGNTO": align_to}
 
         for key, value in kwargs.items():
-            kwarg_dict[key.upper().replace(
-                " ", "").replace("_", "").strip()] = value
+            kwarg_dict[key.upper().replace(" ", "").replace("_", "").strip()] = value
 
         logging.info(f"merging using {kwarg_dict} ...")
 
-        self._free_system_0 = check_hmr(
-            self._free_system_0,
-            self._pipeline_protocol
-        )
+        self._free_system_0 = check_hmr(self._free_system_0, self._pipeline_protocol)
         self._free_system_1 = check_hmr(
             self._free_system_1,
             self._pipeline_protocol,
@@ -255,8 +250,7 @@ class fepprep:
             logging.error(
                 "could not merge with the existing protocol. Will try merging with the allow ring breaking and allow ring size change arguments set to True..."
             )
-            update_kwarg_dict = {
-                "ALLOWRINGBREAKING": True, "ALLOWRINGSIZECHANGE": True}
+            update_kwarg_dict = {"ALLOWRINGBREAKING": True, "ALLOWRINGSIZECHANGE": True}
             kwarg_dict.update(update_kwarg_dict)
             free_system = merge.merge_system(
                 self._free_system_0, self._free_system_1, **kwarg_dict
@@ -332,8 +326,7 @@ class fepprep:
                 timestep=protocol.eq_timestep() * protocol.timestep_unit(),
                 num_lam=protocol.num_lambda(),
                 temperature=protocol.temperature() * protocol.temperature_unit(),
-                runtime=(protocol.eq_runtime() * 2) *
-                protocol.eq_runtime_unit(),
+                runtime=(protocol.eq_runtime() * 2) * protocol.eq_runtime_unit(),
                 pressure=protocol.pressure() * protocol.pressure_unit(),
                 restart_interval=restart_interval,
             )
@@ -490,7 +483,7 @@ class fepprep:
                     work_dir=f"{work_dir}/{leg}_{rep}/min",
                     extra_options=min_extra_options,
                     ignore_warnings=True,
-                    explicit_dummies=False, # only applied to AMBER runs
+                    explicit_dummies=False,  # only applied to AMBER runs
                 )
 
                 BSS.FreeEnergy.Relative(
@@ -529,23 +522,33 @@ class fepprep:
                     "minimise": True,
                     "minimise maximum iterations": protocol.min_steps(),
                     "equilibrate": False,
-                    "coulomb power": 1, "shift delta": 1.0,
+                    "coulomb power": 1,
+                    "shift delta": 1.0,
                     "cutoff distance": "12 angstrom",
-                    "integrator_type": "langevinmiddle", # as eq is 2 fs, want to use the same as for prod
+                    "integrator_type": "langevinmiddle",  # as eq is 2 fs, want to use the same as for prod
                 }
-                prod_extra_options = {"minimise": False, "equilibrate": False,
-                                      "coulomb power": 1, "shift delta": 1.0,
-                                      "cutoff distance": "12 angstrom",
-                                      }
+                prod_extra_options = {
+                    "minimise": False,
+                    "equilibrate": False,
+                    "coulomb power": 1,
+                    "shift delta": 1.0,
+                    "cutoff distance": "12 angstrom",
+                }
 
                 # hmr factor
                 if protocol.hmr():
                     if protocol.hmr_factor() == "auto":
                         eq_extra_options["hydrogen mass repartitioning factor"] = "1.5"
-                        prod_extra_options["hydrogen mass repartitioning factor"] = "1.5"
+                        prod_extra_options[
+                            "hydrogen mass repartitioning factor"
+                        ] = "1.5"
                     else:
-                        eq_extra_options["hydrogen mass repartitioning factor"] = f"{protocol.hmr_factor()}"
-                        prod_extra_options["hydrogen mass repartitioning factor"] = f"{protocol.hmr_factor()}"
+                        eq_extra_options[
+                            "hydrogen mass repartitioning factor"
+                        ] = f"{protocol.hmr_factor()}"
+                        prod_extra_options[
+                            "hydrogen mass repartitioning factor"
+                        ] = f"{protocol.hmr_factor()}"
 
                 for key, value in protocol.config_options()["all"].items():
                     eq_extra_options[key] = value
@@ -619,13 +622,11 @@ class fepprep:
 
         # any pipeline kwargs overwrite this
         for key, value in self._pipeline_protocol.kwargs().items():
-            kwarg_dict[key.upper().replace(
-                " ", "").replace("_", "").strip()] = value
+            kwarg_dict[key.upper().replace(" ", "").replace("_", "").strip()] = value
 
         # any final passed arguments in the script overwrite this
         for key, value in kwargs.items():
-            kwarg_dict[key.upper().replace(
-                " ", "").replace("_", "").strip()] = value
+            kwarg_dict[key.upper().replace(" ", "").replace("_", "").strip()] = value
 
         if self._pipeline_protocol.fepprep() == "both":
             ligs = ["lig0", "lig1"]
@@ -676,8 +677,7 @@ class fepprep:
 
         # default folder is with no integer.
         # for the sake of analysis , doesnt matter as finds folders w names of leg
-        more_repeats = list(
-            range(start_rep, self._pipeline_protocol.repeats()))
+        more_repeats = list(range(start_rep, self._pipeline_protocol.repeats()))
 
         logging.info(
             f"there are {self._pipeline_protocol.repeats()} folder(s) being made for each leg..."

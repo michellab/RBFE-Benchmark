@@ -101,8 +101,7 @@ def add_header_simfile(trans_dir):
                 print(f"will write header for simfiles in {direc}")
                 try:
                     if not os.path.exists(f"{direc}/old_simfile.dat"):
-                        os.rename(f"{direc}/simfile.dat",
-                                  f"{direc}/old_simfile.dat")
+                        os.rename(f"{direc}/simfile.dat", f"{direc}/old_simfile.dat")
 
                     if not os.path.exists(f"{direc}/old_old_simfile.dat"):
                         os.rename(
@@ -143,8 +142,7 @@ def add_header_simfile(trans_dir):
                         .decode("utf-8")
                         .strip()
                     )
-                    final_step = float(
-                        last_line.strip().split(" ")[0].strip()) + 200
+                    final_step = float(last_line.strip().split(" ")[0].strip()) + 200
                     sim_time = final_step * timestep / 1000
                     extr_timestep = True
                 except:
@@ -248,12 +246,18 @@ class extract:
                 if "min" in dirs:
                     if len([x for x in validate.engines() if x in dirs]) > 1:
                         print(
-                            "There are too many engines found in the file path. will check for all output formats....")
-                        file_names = ["amber.cfg", "amber.prm7", "initial_amber.rst7",
-                                      "gromacs.mdp", "initial_gromacs.gro", "gromacs.top",]
+                            "There are too many engines found in the file path. will check for all output formats...."
+                        )
+                        file_names = [
+                            "amber.cfg",
+                            "amber.prm7",
+                            "initial_amber.rst7",
+                            "gromacs.mdp",
+                            "initial_gromacs.gro",
+                            "gromacs.top",
+                        ]
                     elif "AMBER" in dirs:
-                        file_names = ["amber.cfg",
-                                      "amber.prm7", "initial_amber.rst7"]
+                        file_names = ["amber.cfg", "amber.prm7", "initial_amber.rst7"]
                     elif "GROMACS" in dirs:
                         file_names = [
                             "gromacs.mdp",
@@ -263,20 +267,26 @@ class extract:
                 elif "eq" in dirs:
                     if len([x for x in validate.engines() if x in dirs]) > 1:
                         print(
-                            "There are too many engines found in the file path. will check for all output formats....")
-                        file_names = ["amber.cfg", "gromacs.mdp",
-                                      "somd.cfg", "somd.prm7", "initial_somd.rst7"]
+                            "There are too many engines found in the file path. will check for all output formats...."
+                        )
+                        file_names = [
+                            "amber.cfg",
+                            "gromacs.mdp",
+                            "somd.cfg",
+                            "somd.prm7",
+                            "initial_somd.rst7",
+                        ]
                     elif "AMBER" in dirs:
                         file_names = ["amber.cfg"]
                     elif "GROMACS" in dirs:
                         file_names = ["gromacs.mdp"]
                     elif "SOMD" in dirs:
-                        file_names = ["somd.cfg",
-                                      "somd.prm7", "initial_somd.rst7"]
+                        file_names = ["somd.cfg", "somd.prm7", "initial_somd.rst7"]
                 else:
                     if len([x for x in validate.engines() if x in dirs]) > 1:
                         print(
-                            "There are too many engines found in the file path. will check for all output formats....")
+                            "There are too many engines found in the file path. will check for all output formats...."
+                        )
                         file_names = ["amber.cfg", "gromacs.mdp", "somd.cfg"]
                     elif "AMBER" in dirs:
                         file_names = ["amber.cfg"]
@@ -329,8 +339,8 @@ class extract:
                         extract = True
                         dirs_found += 1
             else:
-                extract=False
-            
+                extract = False
+
             if extract_dir:
                 if "lambda" in dirs:
                     new_dir = validate.folder_path(
@@ -340,9 +350,9 @@ class extract:
                     # check if too many engines in the file path
                     if len([x for x in validate.engines() if x in dirs]) > 1:
                         print(
-                            "There are too many engines found in the file path. will check for all output formats....")
-                        file_names = ["amber.out",
-                                    "gromacs.xvg", "simfile.dat"]
+                            "There are too many engines found in the file path. will check for all output formats...."
+                        )
+                        file_names = ["amber.out", "gromacs.xvg", "simfile.dat"]
                     elif "AMBER" in dirs:
                         file_names = ["amber.out"]
                     elif "GROMACS" in dirs:
@@ -354,14 +364,11 @@ class extract:
                         print(
                             "no engine found in filepath, will try to extract each engine's output format..."
                         )
-                        file_names = ["amber.out",
-                                    "gromacs.xvg", "simfile.dat"]
+                        file_names = ["amber.out", "gromacs.xvg", "simfile.dat"]
 
                     for file in file_names:
                         try:
-                            shutil.copyfile(
-                                f"{dirs}/{file}", f"{new_dir}/{file}"
-                            )
+                            shutil.copyfile(f"{dirs}/{file}", f"{new_dir}/{file}")
                             if os.path.getsize(f"{new_dir}/{file}") == 0:
                                 print(
                                     f"File extracting to '{new_dir}/{file}' is empty!"
@@ -461,16 +468,14 @@ class extract:
                     # create mda universe based on file type
                     if "SOMD" in direc:
                         # must be parm7 for mda
-                        shutil.copy(f"{direc}/somd.prm7",
-                                    f"{direc}/somd.parm7")
+                        shutil.copy(f"{direc}/somd.prm7", f"{direc}/somd.parm7")
                         coord_file = validate.file_path(f"{direc}/somd.parm7")
 
                         # combine traj files
                         traj_files = []
                         for file in os.listdir(direc):
                             if "dcd" in file:
-                                traj_files.append(
-                                    validate.file_path(f"{direc}/{file}"))
+                                traj_files.append(validate.file_path(f"{direc}/{file}"))
                         if not traj_files:
                             raise ValueError(
                                 "there are no dcd trajectory files for somd in this folder."
@@ -478,8 +483,7 @@ class extract:
 
                     elif "AMBER" in direc:
                         # must be parm7 for mda
-                        shutil.copy(f"{direc}/amber.prm7",
-                                    f"{direc}/amber.parm7")
+                        shutil.copy(f"{direc}/amber.prm7", f"{direc}/amber.parm7")
                         coord_file = validate.file_path(f"{direc}/amber.parm7")
 
                         traj_files = validate.file_path(f"{direc}/amber.nc")
@@ -581,8 +585,7 @@ class extract:
             u,
             ref,
             select="resname LIG",
-            groupselections=["resname LIG and resname LIG",
-                             "backbone and resname LIG"],
+            groupselections=["resname LIG and resname LIG", "backbone and resname LIG"],
         )
         R.run()
 

@@ -121,8 +121,7 @@ class ligprep:
 
         nmols = mol_solvated.nMolecules()
 
-        logging.info(
-            f"box dimensions for {box_edges} {box_edges_unit} {box_type} are:")
+        logging.info(f"box dimensions for {box_edges} {box_edges_unit} {box_type} are:")
         logging.info(f"box_min : {box_min}")
         logging.info(f"box_max : {box_max}")
         logging.info(f"box_size : {box_size}")
@@ -223,7 +222,7 @@ def min_prots(lig_fep: str) -> (BSS.Protocol, BSS.Protocol):
     return protocol_min_rest, protocol_min
 
 
-def nvt_prots(lig_fep: str) -> (BSS.Protocol):
+def nvt_prots(lig_fep: str) -> BSS.Protocol:
     """define the nvt protocols for the equilibration. For fepprep is at lambda 0.5
 
     Args:
@@ -256,7 +255,8 @@ def nvt_prots(lig_fep: str) -> (BSS.Protocol):
         timestep=1 * BSS.Units.Time.femtosecond,
         force_constant=100,
         restart=False,
-        thermostat_time_constant=0.5 * BSS.Units.Time.picosecond, # so collision freq 2ps^-1 when running with AMBER
+        thermostat_time_constant=0.5
+        * BSS.Units.Time.picosecond,  # so collision freq 2ps^-1 when running with AMBER
         **args,
     )
 
@@ -295,7 +295,8 @@ def npt_prots(lig_fep: str) -> (BSS.Protocol, BSS.Protocol, BSS.Protocol):
         restraint="all",
         force_constant=50,
         restart=False,
-        thermostat_time_constant=0.5 * BSS.Units.Time.picosecond,  # so collision freq 2ps^-1
+        thermostat_time_constant=0.5
+        * BSS.Units.Time.picosecond,  # so collision freq 2ps^-1
         **args,
     )
     # NPT with gradual release of restraints
@@ -306,7 +307,8 @@ def npt_prots(lig_fep: str) -> (BSS.Protocol, BSS.Protocol, BSS.Protocol):
         restraint="heavy",
         force_constant=10,
         restart=False,
-        thermostat_time_constant=0.5 * BSS.Units.Time.picosecond,  # so collision freq 2ps^-1
+        thermostat_time_constant=0.5
+        * BSS.Units.Time.picosecond,  # so collision freq 2ps^-1
         **args,
     )
     # NPT no restraints
@@ -315,7 +317,8 @@ def npt_prots(lig_fep: str) -> (BSS.Protocol, BSS.Protocol, BSS.Protocol):
         pressure=1 * BSS.Units.Pressure.atm,
         temperature=temperature * BSS.Units.Temperature.kelvin,
         restart=False,
-        thermostat_time_constant=0.5 * BSS.Units.Time.picosecond,  # so collision freq 2ps^-1
+        thermostat_time_constant=0.5
+        * BSS.Units.Time.picosecond,  # so collision freq 2ps^-1
         **args,
     )
 
@@ -366,7 +369,7 @@ def minimise_equilibrate_leg(
     lig_fep: str = "ligprep",
     work_dir: Optional[str] = None,
     timestep: int = 2,
-) -> BSS._SireWrappers.System: 
+) -> BSS._SireWrappers.System:
     """minimse and equilibrate for the given leg of the pipeline
 
     Args:
@@ -393,12 +396,10 @@ def minimise_equilibrate_leg(
     protocol_nvt_sol = nvt_prots(lig_fep)
 
     # NPTs
-    protocol_npt_heavy, protocol_npt_heavy_lighter, protocol_npt = npt_prots(
-        lig_fep)
+    protocol_npt_heavy, protocol_npt_heavy_lighter, protocol_npt = npt_prots(lig_fep)
 
     protocol_npt_heavy.setTimeStep(timestep * BSS.Units.Time.femtosecond)
-    protocol_npt_heavy_lighter.setTimeStep(
-        timestep * BSS.Units.Time.femtosecond)
+    protocol_npt_heavy_lighter.setTimeStep(timestep * BSS.Units.Time.femtosecond)
     protocol_npt.setTimeStep(timestep * BSS.Units.Time.femtosecond)
 
     # run all the protocols
@@ -436,8 +437,7 @@ def minimise_equilibrate_leg(
 
     if lig_fep == "fepprep":
         logging.info("minimising...")
-        minimised1 = run_process(
-            system_solvated, protocol_min_rest, engine, pmemd)
+        minimised1 = run_process(system_solvated, protocol_min_rest, engine, pmemd)
         minimised2 = run_process(minimised1, protocol_min, engine, pmemd)
         logging.info("equilibrating NVT...")
         equil_nvt = run_process(minimised2, protocol_nvt_sol, engine, pmemd)

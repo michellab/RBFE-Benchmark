@@ -42,12 +42,12 @@ class convert:
 
         # gas constant in kcal per Kelvin per mol, exp val is Ki converted into M
         # value is /1 as the concentration of substrate, log result has no units, units from RT
-        kcal_val = (R_kcalmol * temperature * np.log(value))
+        kcal_val = R_kcalmol * temperature * np.log(value)
 
         # propagate the error
         # if x = ln(a)
         # errx = erra/a
-        error = (err / value)
+        error = err / value
         # A is RT
         kcal_err = abs(R_kcalmol * temperature * error)
 
@@ -75,12 +75,11 @@ class convert:
 
         exper_dict = {}
         for key in data.keys():  # write for each ligand that was in yaml file
-            value=None
-            error=None
+            value = None
+            error = None
             # check what type of data
             if data[key]["measurement"]["type"].lower().strip() == "dg":
                 if data[key]["measurement"]["unit"] == "kcal/mol":
-
                     value = data[key]["measurement"]["value"]
                     error = data[key]["measurement"]["error"]
 
@@ -98,7 +97,9 @@ class convert:
 
     @staticmethod
     def _yml_into_exper_raw_dict(
-        exp_file, temperature: Optional[Union[int, float]] = 300, format_type="Ki",
+        exp_file,
+        temperature: Optional[Union[int, float]] = 300,
+        format_type="Ki",
     ) -> dict:
         """convert yml file into experimental dictionary of values.
 
@@ -128,7 +129,7 @@ class convert:
                     factor = 2
                 else:
                     raise ValueError("format_type must be Ki or IC50")
-                
+
                 pki_err_factor = 0.44
 
             elif data[key]["measurement"]["type"].lower().strip() == "ic50":
@@ -139,7 +140,7 @@ class convert:
                     factor = 1
                 else:
                     raise ValueError("format_type must be Ki or IC50")
-                
+
                 pki_err_factor = 0.55
             else:
                 raise Exception
@@ -327,10 +328,8 @@ class convert:
                 exper_val_dict = validate.dictionary(exper_val)
             except:
                 validate.file_path(exper_val)
-                logging.info(
-                    "input is a file, will convert this into a dict...")
-                logging.info(
-                    "please check that the conversion of values is okay.")
+                logging.info("input is a file, will convert this into a dict...")
+                logging.info("please check that the conversion of values is okay.")
                 exper_val_dict = convert.yml_into_exper_dict(exper_val)
 
             add_exper_values = True
@@ -350,8 +349,7 @@ class convert:
                 # write in kcal/mol
                 for lig in exper_val_dict.keys():
                     writer.writerow(
-                        [lig, f"{exper_val_dict[lig][0]}",
-                            f"{exper_val_dict[lig][1]}"]
+                        [lig, f"{exper_val_dict[lig][0]}", f"{exper_val_dict[lig][1]}"]
                     )
 
             # second write the perturbation data
@@ -383,7 +381,8 @@ class convert:
 
                 if comp_err == 0:
                     logging.error(
-                        f"when converting to the cinnanar file, the error for {key} in {output_file} is 0. This can create issues later for network wide analysis, so setting as 0.001.")
+                        f"when converting to the cinnanar file, the error for {key} in {output_file} is 0. This can create issues later for network wide analysis, so setting as 0.001."
+                    )
                     comp_err = 0.0001
 
                 if not comp_ddG:
@@ -394,18 +393,15 @@ class convert:
                     if perturbations:
                         pert = f"{lig_0}~{lig_1}"
                         if pert in perturbations:
-                            writer.writerow(
-                                [lig_0, lig_1, comp_ddG, comp_err, "0.0"])
+                            writer.writerow([lig_0, lig_1, comp_ddG, comp_err, "0.0"])
                         else:
                             pass
 
                     else:
-                        writer.writerow(
-                            [lig_0, lig_1, comp_ddG, comp_err, "0.0"])
+                        writer.writerow([lig_0, lig_1, comp_ddG, comp_err, "0.0"])
 
     @staticmethod
     def _convert_html_mbarnet_into_dict(file):
-
         try:
             from bs4 import BeautifulSoup
             import re
@@ -413,8 +409,7 @@ class convert:
             import execjs
         except Exception as e:
             logging.critical(f"{e}")
-            logging.critical(
-                "cannot import for converting html mbarnet to dictionary.")
+            logging.critical("cannot import for converting html mbarnet to dictionary.")
 
         file = validate.file_path(file)
 
@@ -424,7 +419,7 @@ class convert:
         soup = BeautifulSoup(html_content, "html.parser")
 
         # Define a regular expression pattern to extract the data array from the JavaScript code
-        pattern = re.compile(r'var idata = (.*?);', re.DOTALL)
+        pattern = re.compile(r"var idata = (.*?);", re.DOTALL)
 
         # Search for the pattern in the HTML content
         match = pattern.search(html_content)
@@ -433,7 +428,7 @@ class convert:
             data_js = match.group(1)
             # Replace single quotes with double quotes in the JSON data
             data_js = data_js.replace("\n", "")
-            data_js = data_js.replace("'", "\"")
+            data_js = data_js.replace("'", '"')
 
             javascript_code = f"""
             var gdata = {data_js};

@@ -49,8 +49,7 @@ class validate:
             dict: the dictionary
         """
         if not isinstance(dictionary, dict):
-            raise TypeError(
-                f"{dictionary} / 'dictionary' must be of type 'dict'.")
+            raise TypeError(f"{dictionary} / 'dictionary' must be of type 'dict'.")
 
         return dictionary
 
@@ -68,8 +67,7 @@ class validate:
             networkx.Graph: the nxgraph
         """
         if not isinstance(nxgraph, nx.Graph):
-            raise TypeError(
-                f"{nxgraph} / 'nxgraph' must be of type 'networkx.Graph'.")
+            raise TypeError(f"{nxgraph} / 'nxgraph' must be of type 'networkx.Graph'.")
 
         return nxgraph
 
@@ -138,8 +136,7 @@ class validate:
 
         if create:
             if not os.path.exists(folder_path):
-                logging.info(
-                    f"creating {folder_path} as it could not be found...")
+                logging.info(f"creating {folder_path} as it could not be found...")
                 os.makedirs(folder_path)
             else:
                 pass
@@ -167,8 +164,7 @@ class validate:
             raise TypeError("'engine' must be of type 'str'.")
 
         if engine.upper() not in BSS.FreeEnergy.engines():
-            raise ValueError(
-                f"'engine' must be one of {BSS.FreeEnergy.engines()}.")
+            raise ValueError(f"'engine' must be one of {BSS.FreeEnergy.engines()}.")
 
         return engine.upper()
 
@@ -211,8 +207,7 @@ class validate:
                         engines = validate.engine(engines)
                         engines = [engines]
             except:
-                logging.error(
-                    "engine input not recognised. Will use all engines.")
+                logging.error("engine input not recognised. Will use all engines.")
                 engines = BSS.FreeEnergy.engines()
 
         return engines
@@ -326,7 +321,9 @@ class validate:
         if not isinstance(integer, int):
             if not isinstance(integer, float):
                 if not isinstance(integer, str):
-                    raise TypeError(f"{integer} must be of type 'int', 'float' or 'str'")
+                    raise TypeError(
+                        f"{integer} must be of type 'int', 'float' or 'str'"
+                    )
                 else:
                     try:
                         if "." in integer:
@@ -334,7 +331,9 @@ class validate:
                         else:
                             integer = int(integer)
                     except:
-                        raise ValueError(f"{integer} could not be converted into an integer")
+                        raise ValueError(
+                            f"{integer} could not be converted into an integer"
+                        )
 
         if isinstance(integer, float):
             logging.info(f"{integer} will be turned into {int(integer)}")
@@ -360,8 +359,7 @@ class validate:
         if not isinstance(value, float):
             if not isinstance(value, int):
                 if not isinstance(value, str):
-                    raise TypeError(
-                        f"{value} must be of type 'int', 'float' or 'str'")
+                    raise TypeError(f"{value} must be of type 'int', 'float' or 'str'")
 
         try:
             value = float(value)
@@ -395,8 +393,7 @@ class validate:
             time_unit = time_unit.strip().split(" ")[-1].lower()
             time_unit_list = ["ns", "ps", "fs"]
             if time_unit not in time_unit_list:
-                raise ValueError(
-                    f"'time_unit' must be one of {time_unit_list}.")
+                raise ValueError(f"'time_unit' must be one of {time_unit_list}.")
 
             if time_unit == "ns":
                 time_unit = BSS.Units.Time.nanosecond
@@ -563,8 +560,7 @@ class validate:
                 else:
                     boolean_list = ["TRUE", "FALSE", "1", "0"]
                     if boolean.upper() not in boolean_list:
-                        raise ValueError(
-                            f"{boolean} must be one of {boolean_list}.")
+                        raise ValueError(f"{boolean} must be one of {boolean_list}.")
         else:
             boolean = str(boolean)
 
@@ -597,8 +593,7 @@ class validate:
 
         trajectories_list = ["None", "0,0.5,1", "0,1", "All"]
         if trajectories not in trajectories_list:
-            raise ValueError(
-                f"'trajectories' must be one of {trajectories_list}.")
+            raise ValueError(f"'trajectories' must be one of {trajectories_list}.")
 
         return trajectories
 
@@ -855,8 +850,7 @@ class validate:
 
         if not isinstance(molecule, _Molecule):
             if not isinstance(molecule, _System):
-                raise TypeError(
-                    "'molecule' must be a BSS molecule (or system)!.")
+                raise TypeError("'molecule' must be a BSS molecule (or system)!.")
             else:  # if it is a system, convert to a molecule
                 warnings.warn(
                     "a BSS system was passed. The first molecule in the system will be taken."
@@ -885,7 +879,6 @@ class validate:
 
         if analysed == True:
             if not analysis.is_analysed:
-                raise ValueError(
-                    "'analysis' must have already been analysed!.")
+                raise ValueError("'analysis' must have already been analysed!.")
 
         return analysis

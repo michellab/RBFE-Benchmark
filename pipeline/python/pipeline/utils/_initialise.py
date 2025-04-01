@@ -161,8 +161,7 @@ class initialise_pipeline:
 
             ligands_dict[lig_name] = lig
 
-        print(
-            f"there were {len(ligands_dict.keys())} ligands found. These are:\n")
+        print(f"there were {len(ligands_dict.keys())} ligands found. These are:\n")
         for lig in ligands_dict.keys():
             print(lig)
 
@@ -199,8 +198,7 @@ class initialise_pipeline:
                 "The file name should not be changed usually as then it's not compatible with later scripts."
             )
             file_name = validate.string(file_name)
-            validate.folder_path(
-                ("/").join(file_name.split("/")[:-1]), create=True)
+            validate.folder_path(("/").join(file_name.split("/")[:-1]), create=True)
 
         ligands_dict = initialise_pipeline._setup_ligands(
             self._ligands_folder, file_name
@@ -224,8 +222,7 @@ class initialise_pipeline:
 
             # write ligands file again as updted
             write_ligands(
-                list(self.ligands_dict.keys()
-                     ), f"{self._exec_folder}/ligands.dat"
+                list(self.ligands_dict.keys()), f"{self._exec_folder}/ligands.dat"
             )
 
         else:
@@ -300,8 +297,7 @@ class initialise_pipeline:
         )
 
         self.pert_network_dict = pert_network_dict
-        self.perturbations = [
-            f"{key[0]}~{key[1]}" for key in pert_network_dict.keys()]
+        self.perturbations = [f"{key[0]}~{key[1]}" for key in pert_network_dict.keys()]
 
         self.write_network()
 
@@ -319,7 +315,6 @@ class initialise_pipeline:
             ]
 
         self.write_network()
-
 
     def add_perturbation(self, pert: str, links_file: Optional[str] = None):
         """add a perturbation from the network for the pipeline. Can use a links file for the score.
@@ -345,7 +340,6 @@ class initialise_pipeline:
 
         self.write_network()
 
-
     def run_reverse(self, reverse: bool):
         """whether to also run the network in the reverse direction. Important for writing the network file.
 
@@ -354,8 +348,7 @@ class initialise_pipeline:
         """
 
         self.protocol.reverse(reverse)
-        self.protocol.rewrite_protocol(
-            file_path=f"{self.exec_folder()}/protocol.dat")
+        self.protocol.rewrite_protocol(file_path=f"{self.exec_folder()}/protocol.dat")
 
     def draw_network(self, folder: Optional[str] = None):
         """draw the network.
@@ -367,8 +360,7 @@ class initialise_pipeline:
         if not folder:
             folder = self.exec_folder()
 
-        graph = network_graph(
-            list(self.ligands_dict.keys()), self.perturbations)
+        graph = network_graph(list(self.ligands_dict.keys()), self.perturbations)
         graph.draw_graph(file_dir=folder)
 
     def draw_ligand(self, ligand: str = None):
@@ -380,11 +372,10 @@ class initialise_pipeline:
 
         if not folder:
             folder = self.exec_folder()
-        
+
         ligand = validate.string(ligand)
 
-        graph = network_graph(
-            list(self.ligands_dict.keys()), self.perturbations)
+        graph = network_graph(list(self.ligands_dict.keys()), self.perturbations)
         graph.draw_ligand(ligand)
 
     def setup_protocols(
@@ -399,13 +390,11 @@ class initialise_pipeline:
 
         # setup the protocol, write the file, and add to class object
         protocol = pipeline_protocol(protocol_dictionary, auto_validate=True)
-        protocol.rewrite_protocol(
-            file_path=f"{self.exec_folder()}/protocol.dat")
+        protocol.rewrite_protocol(file_path=f"{self.exec_folder()}/protocol.dat")
         self.protocol = protocol
 
         # create an analysis protocol
-        ana_protocol = analysis_protocol(
-            ana_protocol_dictionary, auto_validate=True)
+        ana_protocol = analysis_protocol(ana_protocol_dictionary, auto_validate=True)
         ana_protocol.rewrite_protocol(
             file_path=f"{self.exec_folder()}/analysis_protocol.dat"
         )
@@ -419,8 +408,7 @@ class initialise_pipeline:
         """
 
         self.protocol = validate.pipeline_protocol(protocol)
-        self.protocol.rewrite_protocol(
-            file_path=f"{self.exec_folder()}/protocol.dat")
+        self.protocol.rewrite_protocol(file_path=f"{self.exec_folder()}/protocol.dat")
 
     def add_analysis_protocol(self, protocol: analysis_protocol):
         """add an analysis protocol object.
@@ -447,7 +435,6 @@ class initialise_pipeline:
         write_lomap_scores(
             self.pert_network_dict, f"{self.exec_folder()}/network_scores.dat"
         )
-
 
     def add_source_file(self, file: str):
         """source file that has info for modules, conda paths, MD engines, etc.

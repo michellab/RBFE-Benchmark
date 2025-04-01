@@ -12,9 +12,11 @@ import logging
 BSS.setVerbose = True
 
 
-def run_all_analysis_methods(work_dir, pert, engine, final_results_folder=None, analysis_options_name=None):
+def run_all_analysis_methods(
+    work_dir, pert, engine, final_results_folder=None, analysis_options_name=None
+):
     """analyses all the iterations of estimators (TI, MBAR) and stats ineff and auto eq
-      along with different truncated percentages, as it calculates the convergence.
+    along with different truncated percentages, as it calculates the convergence.
     """
 
     pert_name = None
@@ -22,10 +24,7 @@ def run_all_analysis_methods(work_dir, pert, engine, final_results_folder=None, 
     # only want to calculate edgembar once
     edgembar_calc_already = False
 
-    for estimator in ["MBAR",
-                      "TI"
-                      ]:
-
+    for estimator in ["MBAR", "TI"]:
         analysis_options = [
             {
                 "estimator": estimator,
@@ -42,33 +41,31 @@ def run_all_analysis_methods(work_dir, pert, engine, final_results_folder=None, 
                 "statistical inefficiency": True,
                 "auto equilibration": True,
             },
-
             # for truncated sampling time
             {
                 "estimator": estimator,
                 "statistical inefficiency": True,
                 "auto equilibration": False,
-                "truncate upper": 25, # 1/4 of the run, so 1 ns if 4 ns run
-                "truncate lower": 0,                
+                "truncate upper": 25,  # 1/4 of the run, so 1 ns if 4 ns run
+                "truncate lower": 0,
             },
             {
                 "estimator": estimator,
                 "statistical inefficiency": True,
                 "auto equilibration": False,
-                "truncate upper": 50, # 1/2 of the run, so 2 ns if 4 ns run
-                "truncate lower": 0,                
+                "truncate upper": 50,  # 1/2 of the run, so 2 ns if 4 ns run
+                "truncate lower": 0,
             },
             {
                 "estimator": estimator,
                 "statistical inefficiency": True,
                 "auto equilibration": False,
-                "truncate upper": 75, # 3/4 of the run, so 3 ns if 4 ns run
-                "truncate lower": 0,                
+                "truncate upper": 75,  # 3/4 of the run, so 3 ns if 4 ns run
+                "truncate lower": 0,
             },
         ]
 
         for ana_option in analysis_options:
-
             ana_option = analysis_protocol(ana_option, auto_validate=True)
             ana_option.name(analysis_options_name)
 
@@ -76,8 +73,7 @@ def run_all_analysis_methods(work_dir, pert, engine, final_results_folder=None, 
             logging.info(f"using {ana_option.print_protocol()} for analysis")
 
             # using the pipeline module for analysis
-            analysed_pert = analyse(work_dir, pert, engine,
-                                    analysis_prot=ana_option)
+            analysed_pert = analyse(work_dir, pert, engine, analysis_prot=ana_option)
             avg, error, repeats_tuple_list = analysed_pert.analyse_all_repeats()
             analysed_pert.check_convergence()
             analysed_pert.plot_graphs()
@@ -105,7 +101,7 @@ def run_all_analysis_methods(work_dir, pert, engine, final_results_folder=None, 
             if not edgembar_calc_already:
                 # analysed_pert.format_for_edgembar()
                 edgembar_calc_already = True
-            
+
             # if ana_option.auto_equilibration():
 
             #     with open(f"{work_dir}/analysis_log.txt", "r") as file:
@@ -113,12 +109,18 @@ def run_all_analysis_methods(work_dir, pert, engine, final_results_folder=None, 
             #         for f in file.readlines():
             #             if "Start index:" in f:
             #                 start_idxs.append(f.split(":")[1].split(" ")[0])
-                
+
             #     logging.info(f"autoequilibration times were {start_idxs}")
 
 
-def analysis_work_dir(work_dir, pert, engine, analysis_options, final_results_folder, analysis_options_name):
-
+def analysis_work_dir(
+    work_dir,
+    pert,
+    engine,
+    analysis_options,
+    final_results_folder,
+    analysis_options_name,
+):
     if analysis_options:
         analysis_options = analysis_protocol(analysis_options, auto_validate=True)
     else:
@@ -150,15 +152,15 @@ def check_arguments(args):
         if args.main_folder:
             main_folder = args.main_folder
         else:
-            main_folder = str(
-                input("what is the main folder of the run?: ")).strip()
+            main_folder = str(input("what is the main folder of the run?: ")).strip()
 
     if args.protocol_file:
         prot_file = args.protocol_file
     else:
         prot_file = None
         logging.error(
-            "protocol file not provided. Will use auto settings for analysis.")
+            "protocol file not provided. Will use auto settings for analysis."
+        )
 
     if args.perturbation:
         perturbation = args.perturbation
@@ -181,11 +183,20 @@ def check_arguments(args):
     else:
         analysis_file = None
         logging.error(
-            "analysis file not provided. Will use auto settings for analysis.")
+            "analysis file not provided. Will use auto settings for analysis."
+        )
 
     run_all_methods = args.run_all
 
-    return perturbation, engine, analysis_file, main_folder, prot_file, work_dir, run_all_methods
+    return (
+        perturbation,
+        engine,
+        analysis_file,
+        main_folder,
+        prot_file,
+        work_dir,
+        run_all_methods,
+    )
 
 
 def main():
@@ -224,15 +235,22 @@ def main():
     parser.add_argument(
         "-ra",
         "--run_all",
-        action='store_true',
+        action="store_true",
         help="run all analysis methods.",
     )
     args = parser.parse_args()
 
     # check arguments
     print("checking the provided command line arguments...")
-    pert, engine, ana_file, main_dir, prot_file, work_dir, run_all_methods = check_arguments(
-        args)
+    (
+        pert,
+        engine,
+        ana_file,
+        main_dir,
+        prot_file,
+        work_dir,
+        run_all_methods,
+    ) = check_arguments(args)
 
     if prot_file:
         # instantiate the protocol as an object
@@ -240,7 +258,7 @@ def main():
         analysis_options_name = protocol.name()
     else:
         analysis_options_name = None
-    
+
     if ana_file:
         # options
         analysis_options = analysis_protocol(ana_file, auto_validate=True)
@@ -276,56 +294,64 @@ def main():
     if run_all_methods:
         # analyse all methods
         logging.info("running analysis for all methods...")
-        run_all_analysis_methods(work_dir, pert, engine, final_results_folder, analysis_options_name)
+        run_all_analysis_methods(
+            work_dir, pert, engine, final_results_folder, analysis_options_name
+        )
     else:
-        analysis_work_dir(work_dir, pert, engine,
-                          analysis_options, final_results_folder, analysis_options_name)
+        analysis_work_dir(
+            work_dir,
+            pert,
+            engine,
+            analysis_options,
+            final_results_folder,
+            analysis_options_name,
+        )
 
 
 if __name__ == "__main__":
     main()
 
 # things to get from logging analysis txt
-    # "Start index: {}." for the start of the autoequilibrated data. This is the step, can get this as a percentage. 
+# "Start index: {}." for the start of the autoequilibrated data. This is the step, can get this as a percentage.
 
-    # open logging file after autoequilibration was run
-    # try to find the line
-    # get the step of the start index
-    # get the overall indexes ie the length of the data
-    # get the fractional equilibration time of this
-    # plot it as the ensequil is plotted
+# open logging file after autoequilibration was run
+# try to find the line
+# get the step of the start index
+# get the overall indexes ie the length of the data
+# get the fractional equilibration time of this
+# plot it as the ensequil is plotted
 
-    # # Write out data
-    # with open(f"{output_dir}/check_equil_autoequilibration_{leg}_{self.estimator}.txt", "w") as ofile:
-    #     ofile.write(f"Equilibrated: {equilibrated}\n")
-    #     ofile.write(f"p value: {p_value}\n")
-    #     ofile.write(f"p values and times: {p_vals_and_times}\n")
-    #     ofile.write(
-    #         f"Fractional equilibration time: {fractional_equil_time} \n")
-    #     ofile.write(f"Run numbers: {n_repeats}\n")
-        
-    # def check_autoequilibration(self):
+# # Write out data
+# with open(f"{output_dir}/check_equil_autoequilibration_{leg}_{self.estimator}.txt", "w") as ofile:
+#     ofile.write(f"Equilibrated: {equilibrated}\n")
+#     ofile.write(f"p value: {p_value}\n")
+#     ofile.write(f"p values and times: {p_vals_and_times}\n")
+#     ofile.write(
+#         f"Fractional equilibration time: {fractional_equil_time} \n")
+#     ofile.write(f"Run numbers: {n_repeats}\n")
 
-    #     # get length of dataframe from auto eq?
+# def check_autoequilibration(self):
+
+#     # get length of dataframe from auto eq?
 
 
-    #     from EnsEquil.analyse.plot import general_plot, p_plot
+#     from EnsEquil.analyse.plot import general_plot, p_plot
 
-    #     general_plot(
-    #         x_vals=overall_times[0],
-    #         y_vals=overall_dgs,
-    #         x_label="Total Simulation Time / ns",
-    #         y_label=r"$\Delta G$ / kcal mol$^{-1}$",
-    #         outfile=f"{output_dir}/check_equil_multiwindow_paired_t_{leg}.png",
-    #         vline_val=equil_time,
-    #         run_nos=list(range(0, n_repeats)),
-    #     )
+#     general_plot(
+#         x_vals=overall_times[0],
+#         y_vals=overall_dgs,
+#         x_label="Total Simulation Time / ns",
+#         y_label=r"$\Delta G$ / kcal mol$^{-1}$",
+#         outfile=f"{output_dir}/check_equil_multiwindow_paired_t_{leg}.png",
+#         vline_val=equil_time,
+#         run_nos=list(range(0, n_repeats)),
+#     )
 
-    #     # Create plot of p values
-    #     p_vals, times = zip(*p_vals_and_times)
-    #     p_plot(
-    #         times=np.array(times),
-    #         p_vals=np.array(p_vals),
-    #         outfile=f"{output_dir}/check_equil_multiwindow_paired_t_p_vals_{leg}.png",
-    #         p_cutoff=p_cutoff,
-    #     )
+#     # Create plot of p values
+#     p_vals, times = zip(*p_vals_and_times)
+#     p_plot(
+#         times=np.array(times),
+#         p_vals=np.array(p_vals),
+#         outfile=f"{output_dir}/check_equil_multiwindow_paired_t_p_vals_{leg}.png",
+#         p_cutoff=p_cutoff,
+#     )
