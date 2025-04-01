@@ -1,0 +1,17 @@
+lig_0,lig_1,freenrg,error,engine,analysis
+lig_CHEMBL3402744_300,lig_CHEMBL3402753_200,-6.3186 kcal/mol,0.1908 kcal/mol,GROMACS,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_100
+lig_CHEMBL3402744_300,lig_CHEMBL3402748_5300,-0.5456 kcal/mol,0.1620 kcal/mol,GROMACS,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_100
+lig_CHEMBL3402744_300,lig_CHEMBL3402747_3400,2.3581 kcal/mol,0.3384 kcal/mol,GROMACS,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_100
+lig_CHEMBL3402744_300,lig_CHEMBL3402754_40,-2.9875 kcal/mol,0.1142 kcal/mol,GROMACS,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_100
+lig_CHEMBL3402753_200,lig_CHEMBL3402761_1,-2.3213 kcal/mol,0.1776 kcal/mol,GROMACS,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_100
+lig_CHEMBL3402754_40,lig_CHEMBL3402761_1,-2.5083 kcal/mol,0.2667 kcal/mol,GROMACS,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_100
+lig_CHEMBL3402750_400,lig_CHEMBL3402752_30000,3.8307 kcal/mol,0.1324 kcal/mol,GROMACS,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_100
+lig_CHEMBL3402744_300,lig_CHEMBL3402745_200,-2.2117 kcal/mol,0.1154 kcal/mol,GROMACS,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_100
+lig_CHEMBL3402747_3400,lig_CHEMBL3402748_5300,2.2014 kcal/mol,0.1744 kcal/mol,GROMACS,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_100
+lig_CHEMBL3402747_3400,lig_CHEMBL3402751_2100,-0.1991 kcal/mol,0.1344 kcal/mol,GROMACS,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_100
+lig_CHEMBL3402751_2100,lig_CHEMBL3402752_30000,0.3465 kcal/mol,0.1185 kcal/mol,GROMACS,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_100
+lig_CHEMBL3402754_40,lig_CHEMBL3402755_4200,0.5326 kcal/mol,0.1129 kcal/mol,GROMACS,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_100
+lig_CHEMBL3402748_5300,lig_CHEMBL3402749_500,-0.9011 kcal/mol,0.0565 kcal/mol,GROMACS,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_100
+lig_CHEMBL3402749_500,lig_CHEMBL3402750_400,-1.1906 kcal/mol,0.1553 kcal/mol,GROMACS,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_100
+lig_CHEMBL3402753_200,lig_CHEMBL3402754_40,-0.2321 kcal/mol,0.1196 kcal/mol,GROMACS,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_100
+lig_CHEMBL3402753_200,lig_CHEMBL3402755_4200,0.0989 kcal/mol,0.0991 kcal/mol,GROMACS,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_100
