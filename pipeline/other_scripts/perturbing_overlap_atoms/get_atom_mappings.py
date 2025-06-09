@@ -2,15 +2,6 @@ import BioSimSpace as BSS
 import os
 import sys
 
-try:
-    import pipeline
-except:
-    print("adding code to the pythonpath...")
-    code = "/home/anna/Documents/code/python"
-    if code not in sys.path:
-        sys.path.insert(1, code)
-    import pipeline
-
 from pipeline.prep import *
 from pipeline.utils import *
 

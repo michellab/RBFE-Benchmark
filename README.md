@@ -5,7 +5,7 @@ For full details, please see the manuscript.
 
 **inputs** - contains the contains the parameterised proteins and the ligand structure files, generated networks, and experimental values.
 
-**results** - contains the csv files of the edge results for each system.
+**results** - contains the csv files of the edge and ligand results for each system.
 
 **pipeline** - contains the code and scripts used for setting up, running, and analysing the simulations.
 
