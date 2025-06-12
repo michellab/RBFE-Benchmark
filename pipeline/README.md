@@ -20,7 +20,7 @@ and also install the requirements listed:
 
 Please note these requirements were generated from the conda environment used to run the project. Some dependencies may need to be adjusted.
 
-Clone the BioSimSpace version used for the project at (https://github.com/michellab/BioSimSpace/releases/tag/RBFE-benchmark) and install this in the environment, or for more a more recent version please visit https://github.com/openbiosim/biosimspace .
+Clone the BioSimSpace version used for the project at (https://github.com/michellab/BioSimSpace/releases/tag/RBFE-benchmark) and install this in the environment, or for a more recent version please visit https://github.com/openbiosim/biosimspace .
 
 Follow the instructions there to install the chosen branch.
 
@@ -41,8 +41,6 @@ To run additional network analysis using either FreeEnergyNetworkAnalysis (https
 pipeline_notebooks - notebooks and scripts for starting and analysing the pipeline
 
 python - contains all the code 
-
-other_scripts - contains additional notebooks. These were used for the analysis presented. Absolute file paths may need to be adjusted.
 
 
 ### Outline of the pipeline:
