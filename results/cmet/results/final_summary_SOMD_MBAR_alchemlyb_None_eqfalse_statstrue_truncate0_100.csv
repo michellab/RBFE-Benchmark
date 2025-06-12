@@ -1,0 +1,18 @@
+lig_0,lig_1,freenrg,error,lower_ci,upper_ci,CI,engine,analysis,method
+lig_0,lig_1,freenrg,error,lower_ci,upper_ci,CI,engine,analysis,method
+lig_CHEMBL3402744_300,lig_CHEMBL3402754_40,-3.0594 kcal/mol,0.4459 kcal/mol,-4.977899121449175,-1.1409160664742704,0.95,SOMD,MBAR_alchemlyb_None_eqfalse_statstrue_truncate0_100,None
+lig_CHEMBL3402744_300,lig_CHEMBL3402747_3400,1.1993 kcal/mol,0.1756 kcal/mol,0.44375426443186394,1.9549074957442187,0.95,SOMD,MBAR_alchemlyb_None_eqfalse_statstrue_truncate0_100,None
+lig_CHEMBL3402744_300,lig_CHEMBL3402748_5300,2.9887 kcal/mol,0.1091 kcal/mol,2.5192872962109907,3.4581433968775452,0.95,SOMD,MBAR_alchemlyb_None_eqfalse_statstrue_truncate0_100,None
+lig_CHEMBL3402744_300,lig_CHEMBL3402753_200,-0.3925 kcal/mol,0.3059 kcal/mol,-1.708567169745338,0.9235007149237491,0.95,SOMD,MBAR_alchemlyb_None_eqfalse_statstrue_truncate0_100,None
+lig_CHEMBL3402750_400,lig_CHEMBL3402752_30000,2.8091 kcal/mol,0.0890 kcal/mol,2.4261171882260837,3.1920388530276997,0.95,SOMD,MBAR_alchemlyb_None_eqfalse_statstrue_truncate0_100,None
+lig_CHEMBL3402754_40,lig_CHEMBL3402761_1,-3.4936 kcal/mol,0.1475 kcal/mol,-4.128171545334576,-2.8591254282199454,0.95,SOMD,MBAR_alchemlyb_None_eqfalse_statstrue_truncate0_100,None
+lig_CHEMBL3402753_200,lig_CHEMBL3402761_1,-3.2282 kcal/mol,0.3004 kcal/mol,-4.520730265573051,-1.93561616893212,0.95,SOMD,MBAR_alchemlyb_None_eqfalse_statstrue_truncate0_100,None
+lig_CHEMBL3402744_300,lig_CHEMBL3402745_200,-1.0794 kcal/mol,0.0800 kcal/mol,-1.42376354631968,-0.7350757530484542,0.95,SOMD,MBAR_alchemlyb_None_eqfalse_statstrue_truncate0_100,None
+lig_CHEMBL3402747_3400,lig_CHEMBL3402748_5300,2.3841 kcal/mol,0.1029 kcal/mol,1.9413978020325993,2.8268378382244044,0.95,SOMD,MBAR_alchemlyb_None_eqfalse_statstrue_truncate0_100,None
+lig_CHEMBL3402747_3400,lig_CHEMBL3402751_2100,0.3727 kcal/mol,0.0943 kcal/mol,-0.03302911889912924,0.778497964182669,0.95,SOMD,MBAR_alchemlyb_None_eqfalse_statstrue_truncate0_100,None
+lig_CHEMBL3402754_40,lig_CHEMBL3402755_4200,0.3641 kcal/mol,0.0934 kcal/mol,-0.03757578590189076,0.7658630057168356,0.95,SOMD,MBAR_alchemlyb_None_eqfalse_statstrue_truncate0_100,None
+lig_CHEMBL3402751_2100,lig_CHEMBL3402752_30000,0.2138 kcal/mol,0.0904 kcal/mol,-0.17533960318513198,0.6028837303027295,0.95,SOMD,MBAR_alchemlyb_None_eqfalse_statstrue_truncate0_100,None
+lig_CHEMBL3402749_500,lig_CHEMBL3402750_400,-0.9742 kcal/mol,0.0822 kcal/mol,-1.3277899913623903,-0.6206359709710407,0.95,SOMD,MBAR_alchemlyb_None_eqfalse_statstrue_truncate0_100,None
+lig_CHEMBL3402748_5300,lig_CHEMBL3402749_500,-1.9780 kcal/mol,0.1850 kcal/mol,-2.7739119724933423,-1.182184769779807,0.95,SOMD,MBAR_alchemlyb_None_eqfalse_statstrue_truncate0_100,None
+lig_CHEMBL3402753_200,lig_CHEMBL3402754_40,-0.2448 kcal/mol,0.0552 kcal/mol,-0.4820971549063157,-0.00741881343870171,0.95,SOMD,MBAR_alchemlyb_None_eqfalse_statstrue_truncate0_100,None
+lig_CHEMBL3402753_200,lig_CHEMBL3402755_4200,-0.1755 kcal/mol,0.0377 kcal/mol,-0.3377834142080543,-0.013174249534273652,0.95,SOMD,MBAR_alchemlyb_None_eqfalse_statstrue_truncate0_100,None

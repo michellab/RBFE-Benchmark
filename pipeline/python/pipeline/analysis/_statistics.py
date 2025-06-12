@@ -10,12 +10,12 @@ from ._dictionaries import *
 
 from cinnabar import stats
 
-class parametric_statistics():
+
+class parametric_statistics:
     # function for correlation statistics w gaussian noise
 
     @staticmethod
     def confidence(data):
-
         confidence_interval = 0.95
 
         sorted_data = np.sort(data)
@@ -36,7 +36,7 @@ class parametric_statistics():
     def _calculate_r2(prediction, target):
         r_value, p = _stats.pearsonr(prediction, target)
 
-        return r_value ** 2
+        return r_value**2
 
     @staticmethod
     def _calculate_tau(prediction, target):
@@ -46,77 +46,80 @@ class parametric_statistics():
 
     @staticmethod
     def _calculate_rmse(prediction, target):
-        rmse = np.sqrt(np.mean([(pred - tar) ** 2 for pred,tar in zip(prediction,target)]) )
+        rmse = np.sqrt(
+            np.mean([(pred - tar) ** 2 for pred, tar in zip(prediction, target)])
+        )
 
         return rmse
 
     @staticmethod
     def _calculate_mae(prediction, target):
-        mae = np.mean([abs(pred - tar) for pred,tar in zip(prediction,target)])
+        mae = np.mean([abs(pred - tar) for pred, tar in zip(prediction, target)])
 
         return mae
 
     @staticmethod
-    def gaussian_noise_stats(x=None, xerr=None, y=None, yerr=None, repeats=10000, stats_name=None):
+    def gaussian_noise_stats(
+        x=None, xerr=None, y=None, yerr=None, repeats=10000, stats_name=None
+    ):
+        data_comp = [[val, err] for val, err in zip(y, yerr)]
+        exp_data = [val for val, err in zip(x, xerr)]
 
-            data_comp = [[val,err] for val,err in zip(y,yerr)]
-            exp_data = [val for val,err in zip(x,xerr)]
+        new_data = np.array(data_comp)[:, 0]
+        _R_from_data, p = _stats.pearsonr(new_data, np.array(exp_data))
+        _tau_from_data = _stats.kendalltau(new_data, np.array(exp_data))[0]
+        print(_R_from_data, _tau_from_data)
 
-            new_data = np.array(data_comp)[:, 0]
-            _R_from_data, p = _stats.pearsonr(new_data, np.array(exp_data))
-            _tau_from_data = _stats.kendalltau(new_data, np.array(exp_data))[0]
-            print(_R_from_data, _tau_from_data)
+        if stats_name == "MAE":
+            final_stat = parametric_statistics._calculate_mae(new_data, exp_data)
+
+        elif stats_name == "RMSE":
+            final_stat = parametric_statistics._calculate_rmse(new_data, exp_data)
+
+        elif stats_name == "KTAU":
+            final_stat = parametric_statistics._calculate_tau(new_data, exp_data)
+
+        elif stats_name == "R2":
+            final_stat = parametric_statistics._calculate_r2(new_data, exp_data)
+
+        list_stats = []
+
+        # Now generate the data
+        for i in range(repeats):
+            new_data = []
+            for i in range(len(data_comp)):
+                val = data_comp[i][0]
+                err = data_comp[i][1]
+                if err != 0.0:
+                    val2 = np.random.normal(val, err)
+                    new_data.append(val2)
+                else:
+                    new_data.append(val)
 
             if stats_name == "MAE":
-                final_stat = parametric_statistics._calculate_mae(new_data, exp_data)
+                mae = parametric_statistics._calculate_mae(new_data, exp_data)
+                list_stats.append(mae)
 
             elif stats_name == "RMSE":
-                final_stat = parametric_statistics._calculate_rmse(new_data, exp_data)
+                rmse = parametric_statistics._calculate_rmse(new_data, exp_data)
+                list_stats.append(rmse)
 
             elif stats_name == "KTAU":
-                final_stat = parametric_statistics._calculate_tau(new_data, exp_data)
+                tau = parametric_statistics._calculate_tau(new_data, exp_data)
+                list_stats.append(tau)
 
             elif stats_name == "R2":
-                final_stat = parametric_statistics._calculate_r2(new_data, exp_data)
+                R2 = parametric_statistics._calculate_r2(new_data, exp_data)
+                list_stats.append(R2)
 
-            list_stats = []
+        confidence_interval_median = parametric_statistics.confidence(list_stats)[1]
+        avg = np.mean(list_stats)
+        lower = avg - confidence_interval_median[0]
+        upper = confidence_interval_median[1] - avg
+        lower = final_stat - lower
+        upper = final_stat + upper
 
-            # Now generate the data
-            for i in range(repeats):
-                new_data = []
-                for i in range(len(data_comp)):
-                    val = data_comp[i][0]
-                    err = data_comp[i][1]
-                    if err != 0.0:
-                        val2 = np.random.normal(val, err)
-                        new_data.append(val2)
-                    else:
-                        new_data.append(val)
-
-                if stats_name == "MAE":
-                    mae = parametric_statistics._calculate_mae(new_data, exp_data)
-                    list_stats.append(mae)
-
-                elif stats_name == "RMSE":
-                    rmse = parametric_statistics._calculate_rmse(new_data, exp_data)
-                    list_stats.append(rmse)
-
-                elif stats_name == "KTAU":
-                    tau = parametric_statistics._calculate_tau(new_data, exp_data)
-                    list_stats.append(tau)
-
-                elif stats_name == "R2":
-                    R2 = parametric_statistics._calculate_r2(new_data, exp_data)
-                    list_stats.append(R2)
-            
-            confidence_interval_median = parametric_statistics.confidence(list_stats)[1]
-            avg = np.mean(list_stats)
-            lower = avg - confidence_interval_median[0]
-            upper = confidence_interval_median[1] - avg
-            lower = final_stat - lower
-            upper = final_stat + upper
-
-            return (final_stat, np.std(list_stats), (lower,upper))
+        return (final_stat, np.std(list_stats), (lower, upper))
 
 
 class stats_engines(plotting_engines):
@@ -242,16 +245,16 @@ class stats_engines(plotting_engines):
             )
 
         if parametric:
-
             values = parametric_statistics.gaussian_noise_stats(
-            x=x, xerr=xerr, y=y, yerr=yerr, repeats=nbootstrap, stats_name=statistic)
+                x=x, xerr=xerr, y=y, yerr=yerr, repeats=nbootstrap, stats_name=statistic
+            )
 
         else:
             # using cinnabar function
             s = stats.bootstrap_statistic(
                 x, y, xerr, yerr, nbootstrap=nbootstrap, statistic=statistic
             )
-            values = (s["mle"], s["stderr"], [s['low'], s['high']])
+            values = (s["mle"], s["stderr"], [s["low"], s["high"]])
             # string = f"{statistic}:   {s['mle']:.2f} [95%: {s['low']:.2f}, {s['high']:.2f}] " + "\n"
 
         return values

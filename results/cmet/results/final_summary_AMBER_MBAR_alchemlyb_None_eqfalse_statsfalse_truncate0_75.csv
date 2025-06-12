@@ -1,0 +1,14 @@
+lig_0,lig_1,freenrg,error,lower_ci,upper_ci,CI,engine,analysis,method
+lig_CHEMBL3402744_300,lig_CHEMBL3402754_40,-3.7758 kcal/mol,0.2339 kcal/mol,-4.782297415572443,-2.7693569095918926,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_75,None
+lig_CHEMBL3402744_300,lig_CHEMBL3402753_200,-3.0327 kcal/mol,0.5029 kcal/mol,-5.196540750547841,-0.8689512900113656,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_75,None
+lig_CHEMBL3402744_300,lig_CHEMBL3402747_3400,0.2591 kcal/mol,0.3259 kcal/mol,-3.8823501489485004,4.400561772248832,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_75,None
+lig_CHEMBL3402744_300,lig_CHEMBL3402748_5300,0.7271 kcal/mol,0.1560 kcal/mol,-1.2550960574210435,2.7092737972636782,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_75,None
+lig_CHEMBL3402754_40,lig_CHEMBL3402761_1,-2.3733 kcal/mol,0.1545 kcal/mol,-3.0382452266915494,-1.708334598655108,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_75,None
+lig_CHEMBL3402750_400,lig_CHEMBL3402752_30000,1.3943 kcal/mol,0.0687 kcal/mol,nan,nan,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_75,None
+lig_CHEMBL3402747_3400,lig_CHEMBL3402748_5300,0.8687 kcal/mol,0.0775 kcal/mol,0.53515662390865,1.202207676429328,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_75,None
+lig_CHEMBL3402753_200,lig_CHEMBL3402761_1,-3.2038 kcal/mol,0.1544 kcal/mol,-3.868259916905131,-2.5394077019415,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_75,None
+lig_CHEMBL3402744_300,lig_CHEMBL3402745_200,-1.1036 kcal/mol,0.1304 kcal/mol,-1.6647597409876462,-0.5423960566697732,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_75,None
+lig_CHEMBL3402751_2100,lig_CHEMBL3402752_30000,0.4361 kcal/mol,0.0953 kcal/mol,-0.7747185401680341,1.6468515637357097,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_75,None
+lig_CHEMBL3402747_3400,lig_CHEMBL3402751_2100,-1.1965 kcal/mol,0.1518 kcal/mol,-1.8495925684130365,-0.543507282363819,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_75,None
+lig_CHEMBL3402748_5300,lig_CHEMBL3402749_500,-0.0887 kcal/mol,0.3478 kcal/mol,-4.507822911805758,4.33034933883589,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_75,None
+lig_CHEMBL3402754_40,lig_CHEMBL3402755_4200,0.3203 kcal/mol,0.0319 kcal/mol,0.1828612301418317,0.45770050358573405,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_75,None

@@ -1,0 +1,40 @@
+lig_0,lig_1,freenrg,error,lower_ci,upper_ci,CI,engine,analysis,method
+lig_266,lig_290,-2.8623 kcal/mol,0.6801 kcal/mol,-5.78835781662146,0.06378674453646749,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_155,lig_30,0.4572 kcal/mol,0.2333 kcal/mol,-0.5467009370727596,1.4611202840687654,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_224,lig_235,-0.6229 kcal/mol,0.4528 kcal/mol,-2.571070278024752,1.3252837259045882,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_224,lig_290,-3.9485 kcal/mol,0.7085 kcal/mol,-6.997141013910671,-0.8998615508597627,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_235,lig_266,-0.9375 kcal/mol,0.2793 kcal/mol,-2.1391597813646883,0.26424271969359703,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_155,lig_23,nan,nan,None,None,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_23,lig_251,nan,nan,None,None,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_31,lig_43,-0.4899 kcal/mol,0.2582 kcal/mol,-1.6006287088760935,0.6208703905353581,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_252,lig_256,-0.3586 kcal/mol,0.0957 kcal/mol,-0.7703924206324373,0.053143072986124806,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_164,lig_237,0.8063 kcal/mol,0.4289 kcal/mol,-1.0391648384199041,2.65176552580439,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_30,lig_42,0.3256 kcal/mol,0.2498 kcal/mol,-0.749443792117966,1.4005543498718616,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_15,lig_237,-0.2868 kcal/mol,0.0203 kcal/mol,-0.37434923982564633,-0.19923483237058698,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_227,lig_235,2.3107 kcal/mol,0.0642 kcal/mol,2.034627469805045,2.5868132011051372,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_15,lig_227,-2.0123 kcal/mol,0.1057 kcal/mol,-2.467021015732062,-1.557624493371275,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_156,lig_57,-2.0715 kcal/mol,0.1065 kcal/mol,-2.5299186078526597,-1.6130583011755184,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_215,lig_231,0.3556 kcal/mol,0.0666 kcal/mol,0.06899489158211408,0.6421445222321089,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_164,lig_165,-0.3556 kcal/mol,0.0153 kcal/mol,-0.4214591538242405,-0.28970277099888264,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_15,lig_215,1.4098 kcal/mol,0.2712 kcal/mol,0.24280526645322142,2.576720453732601,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_235,lig_290,-2.1210 kcal/mol,0.5098 kcal/mol,-4.3146386044132115,0.07260725185502892,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_30,lig_31,1.8199 kcal/mol,0.1776 kcal/mol,1.0559292860387754,2.5839654984123683,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_227,lig_290,-0.9581 kcal/mol,0.0773 kcal/mol,-1.2907719702888343,-0.6254195687222748,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_231,lig_336,0.1538 kcal/mol,0.0600 kcal/mol,-0.10429120293880151,0.41187844683735425,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_155,lig_156,-0.0331 kcal/mol,0.0217 kcal/mol,-0.12659881717361982,0.06041082171148998,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_167,lig_234,0.8685 kcal/mol,0.0783 kcal/mol,0.5315181977370224,1.2054493345538964,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_155,lig_57,-1.6246 kcal/mol,0.0950 kcal/mol,-2.0333401466173,-1.2158790100254522,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_227,lig_57,2.1237 kcal/mol,0.0309 kcal/mol,1.99075820287185,2.2566034555593952,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_167,lig_215,-0.1710 kcal/mol,0.0439 kcal/mol,-0.3598303941072636,0.0177541423766108,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_231,lig_289,-0.7196 kcal/mol,0.0765 kcal/mol,-1.0488979559068732,-0.3902472846035206,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_252,lig_338,-0.4000 kcal/mol,0.0836 kcal/mol,-0.7596098305658924,-0.04043477889497138,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_252,lig_254,1.4180 kcal/mol,0.3001 kcal/mol,0.1267620060331951,2.7093302823743044,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_251,lig_256,-0.1057 kcal/mol,0.3256 kcal/mol,-1.5064446456682732,1.2950993215909024,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_336,lig_338,0.4030 kcal/mol,0.0719 kcal/mol,0.09377910751458568,0.7121969650694022,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_42,lig_43,0.6746 kcal/mol,0.0427 kcal/mol,0.49106079973988426,0.8581817793265286,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_163,lig_165,-0.6082 kcal/mol,0.1482 kcal/mol,-1.2457236747376061,0.029273640222198805,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_163,lig_234,0.2571 kcal/mol,0.0301 kcal/mol,0.12737784591764983,0.38674932906792486,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_206,lig_215,-2.0239 kcal/mol,0.0367 kcal/mol,-2.1818033939177095,-1.8660853031711468,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_289,lig_336,nan,nan,None,None,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_163,lig_252,-0.3454 kcal/mol,0.1278 kcal/mol,-0.895214195427912,0.2044375424067375,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None
+lig_206,lig_254,-1.0167 kcal/mol,0.2031 kcal/mol,-1.890399042577556,-0.14296260325242827,0.95,AMBER,MBAR_alchemlyb_None_eqfalse_statsfalse_truncate0_50,None

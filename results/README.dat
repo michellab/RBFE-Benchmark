@@ -1,4 +1,4 @@
-Each protein folder contains both the entire analysed edge data ('edges') and the computed node results ('ligands').
+Each protein folder contains both the entire analysed edge data ('results') and the computed node results ('ligands').
 
 For the edge data, the files are named as follows:
 ```final_summary_SOMD_MBAR_alchemlyb_None_eqtrue_statstrue_truncate0_100.csv```
@@ -6,3 +6,4 @@ This states the engine, followed by the estimator. `eqtrue` indicates whether or
 
 For the ligand data, there are subfolders for each network-wide analysed method described in the main manuscript.
 Within the folders, the files are named based on 'MDENGINE_network'.
+

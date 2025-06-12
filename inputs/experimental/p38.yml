@@ -48,6 +48,16 @@ lig_2cc:
     value: 5
   name: lig_2cc
   smiles: '[H]N(C1=NC2=C(C([H])=N1)C([H])=C(OC1=C(F)C([H])=C(F)C([H])=C1[H])C(=O)N2C([H])([H])[H])[C@]([H])(C([H])([H])[H])C([H])([H])S(=O)(=O)C([H])([H])[H]'
+lig_2c:
+  measurement:
+    comment: Table 2, entry 2c
+    doi: 10.1021/jm101423y
+    error: 10
+    type: ic50
+    unit: nM
+    value: 21
+  name: lig_2c
+  smiles: ''
 lig_2d:
   measurement:
     comment: Table 2, entry 2d
