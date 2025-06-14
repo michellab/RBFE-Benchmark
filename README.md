@@ -12,6 +12,7 @@ For full details, please see the main manuscript, available at:
 **pipeline** - contains the code and scripts used for setting up, running, and analysing the simulations.
 
 Below is an outline of the pipeline:
+
 ![](pipeline/pipeline.png)
 
 In order to run the RBFE bechmark, please follow instructions in the `pipeline` folder.
