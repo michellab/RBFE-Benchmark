@@ -39,14 +39,14 @@ To run additional network analysis using either FreeEnergyNetworkAnalysis (https
 
 ### Outline of folders:
 
-pipeline_notebooks - notebooks and scripts for starting and analysing the pipeline
+**pipeline_notebooks** - notebooks and scripts for starting and analysing the pipeline
 
-python - contains all the code 
+**python** - contains all the code for running the pipeline
 
 
 ### Outline of the pipeline:
 
-After the initial setup of the pipeline (pipeline_notebooks folder), a main folder with the settings in `execution_model` should have been created. This contains the `ligands.dat`, `network.dat`, `protocol.dat`, and `analysis_protocol.dat` that can be edited as required. In the main folder, running: `bash run_all_slurm.sh` will start the entire pipeline for a slurm workload manager in a series of dependencies. The run_*_slurm scripts generated in the `scripts` folder may need to be adjusted depending on the slurm cluster and resources available. After all the runs are finished, they can be analysed in a jupyter notebook following the example in the pipeline_notebooks folder.
+After the initial setup of the pipeline (pipeline_notebooks folder), a main folder with the settings in `execution_model` should have been created. This contains the `ligands.dat`, `network.dat`, `protocol.dat`, and `analysis_protocol.dat` that can be edited as required. In the main folder, running: `bash run_all_slurm.sh` will start the entire pipeline for a slurm workload manager in a series of dependencies. The `run_*_slurm` scripts generated in the `scripts` folder may need to be adjusted depending on the slurm cluster and resources available. After all the runs are finished, they can be analysed in a jupyter notebook following the example in the `pipeline_notebooks` folder.
 
 The workflow and scripts are outlined in the figure below:
 
