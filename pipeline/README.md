@@ -32,6 +32,7 @@ Finally, go to the python directory and install the pipeline in the environment 
 
 `python setup.py install`
 
+To run the pipeline, follow instructions in 
 
 To run additional network analysis using either FreeEnergyNetworkAnalysis (https://github.com/michellab/FreeEnergyNetworkAnalysis) or MBARNet (https://gitlab.com/RutgersLBSR/fe-toolkit), please follow their instructions for installation and use. Default network analysis proceeds using cinnabar.
 

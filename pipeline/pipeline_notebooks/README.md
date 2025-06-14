@@ -1,5 +1,7 @@
 # running the pipeline
 
+To run the pipeline, it is possible to use the CLI:
+
 `python initialise_pipeline.py -lf path_to_ligands_folder -pf path_to_protein_file -mf path_to_main_folder_to_setup`
 
 alternatively:
@@ -8,17 +10,17 @@ alternatively:
 and it will also ask for the above folder/file paths.
 
 Additional input that will be asked for during setup:
-Sampling time (per window)
-MD engines to use
-Whether HMR should be applied
-How many repeats to run
-Whether to save the trajectories
+   - Sampling time (per window)
+   - MD engines to use
+   - Whether HMR should be applied
+   - How many repeats to run
+   - Whether to save the trajectories
 
 Then, the network can be edited as follows:
-Remove any ligands to generate the network for
-Add perturbations
-Remove perturbations
-Whether to also run in the reverse direction.
+   - Remove any ligands to generate the network for
+   - Add perturbations
+   - Remove perturbations
+   - Whether to also run in the reverse direction
 
 Finally, it will ask for a path to a sources file that includes all the module exports/pythonpaths.
 eg:
@@ -33,7 +35,7 @@ source $amber/amber.sh
 source $gromacs
 
 export PYTHONPATH="$HOME/BioSimSpace/python:$PYTHONPATH"
-export PYTHONPATH="$HOME/Documents/code/python:$PYTHONPATH"
+export PYTHONPATH="$HOME/Documents/pipeline/python:$PYTHONPATH"
 
 ```
 can also for example include lines such as:
@@ -49,7 +51,7 @@ execution_model (contains: network.dat, ligands.dat, protocol.dat, analysis_prot
 scripts (contains: all scripts for runnning pipeline)
 run_all_slurm.sh
 
-The run_* files in the scripts folder need to be adjusted for the slurm scheduler. - Q incl this in the setup ? can change for branch in 
+The run_* files in the scripts folder need to be adjusted for the slurm scheduler (nodes, runtime, etc).
 
 The first job, ligprep, parameterises the ligands, adds them to the protein system, solvates and equilibrates. It makes the prep folder of all the prepped ligands, which also contains folders where the equilibration files are kept. The ligand files are named sys for protein+ligand and lig for just the solvated ligand.
 
