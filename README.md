@@ -14,4 +14,4 @@ For full details, please see the main manuscript, available at:
 Below is an outline of the pipeline:
 ![](pipeline/pipeline.png)
 
-In order to run the RBFE bechmark, please follow instructions in the ´pipeline´ folder.
+In order to run the RBFE bechmark, please follow instructions in the `pipeline` folder.
