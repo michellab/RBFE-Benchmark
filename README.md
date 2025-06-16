@@ -1,7 +1,7 @@
 # RBFE Benchmark
 
 Files and scripts for Modular and Interoperable Workflows for Benchmarking Alchemical Binding Free Energy Calculation Methodologies.
-For full details, please see the main manuscript, available at: 
+For full details, please see the main manuscript, currently available as a preprint at: [chemrxiv](https://chemrxiv.org/engage/chemrxiv/article-details/684b48f03ba0887c33ef29e7).
 
 **analysis** - contains the ipynb used to generate the analysis and figures for the main manuscript.
 
