@@ -25,7 +25,7 @@ cftime
 charset-normalizer 
 cinnabar 
 colorama 
-ConfigArgParse 
+configargparse
 contourpy 
 cryptography 
 cycler 
@@ -53,7 +53,7 @@ iniconfig
 ipykernel 
 ipython 
 ipython-genutils==0.2.0
-ipywidgets 
+ipywidgets<8 
 jax 
 jaxlib
 jedi 
@@ -61,12 +61,13 @@ Jinja2
 joblib 
 jsonschema 
 jupyter 
+jupyter-contrib-nbextensions
 jupyter-console 
 jupyter-server 
 jupyter_client 
 jupyter_core 
 jupyterlab-pygments 
-jupyterlab-widgets 
+jupyterlab-widgets
 kiwisolver
 MarkupSafe 
 matplotlib 
@@ -88,7 +89,7 @@ netCDF4
 networkx 
 nglview
 numpy
-notebook
+notebook==6.4.12
 notebook_shim
 opt-einsum 
 packaging 
@@ -116,8 +117,7 @@ psutil
 ptyprocess 
 pure-eval 
 pyarrow
-py3Dmol 
-pycairo
+py3Dmol
 pycodestyle==2.9.1
 pycparser 
 pydantic 
@@ -139,7 +139,7 @@ python-constraint==1.4.0
 python-dateutil 
 pytraj==2.0.6
 pytz 
-PyYAML 
+pyyaml 
 pyzmq 
 qtconsole 
 QtPy 

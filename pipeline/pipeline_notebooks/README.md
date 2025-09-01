@@ -2,11 +2,16 @@
 
 To run the pipeline, it is possible to use the CLI:
 
-`python initialise_pipeline.py -lf path_to_ligands_folder -pf path_to_protein_file -mf path_to_main_folder_to_setup`
+```
+python initialise_pipeline.py -lf path_to_ligands_folder -pf path_to_protein_file -mf path_to_main_folder_to_setup
+```
 
 alternatively:
 
-`python initialise_pipeline.py`
+```
+python initialise_pipeline.py
+```
+
 and it will also ask for the above folder/file paths.
 
 Additional input that will be asked for during setup:
@@ -24,6 +29,7 @@ Then, the network can be edited as follows:
 
 Finally, it will ask for a path to a sources file that includes all the module exports/pythonpaths.
 eg:
+
 ```
 export BSS="/home/anna/anaconda3/bin/activate /home/anna/mambaforge/envs/openbiosim-dev"
 export amber="/home/anna/amber22"
@@ -38,10 +44,13 @@ export PYTHONPATH="$HOME/BioSimSpace/python:$PYTHONPATH"
 export PYTHONPATH="$HOME/Documents/pipeline/python:$PYTHONPATH"
 
 ```
+
 can also for example include lines such as:
+
 ```
 module load amber/22
 ```
+
 for the slurm scheduler.
 
 The setup can also be carried out using the setup_notebook.ipynb in this folder. This provides more extensive protocol editing and visualisation options.
