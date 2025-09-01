@@ -6,32 +6,46 @@ Copied from https://github.com/annamherz/pipeline and edited for clarity.
 
 First, create a mamba environment:
 
-```mamba create --name pipeline python=3.10 pip```
+```
+mamba create --name pipeline python=3.10 pip
+```
 
 Next, activate the environment:
 
-```mamba activate pipeline```
+```
+mamba activate pipeline
+```
 
 Following this, install the following requirements:
 
-```mamba install -c conda-forge openmm==8.1.2 openff-toolkit==0.16.6 openff-interchange==0.4.0 openff-units==0.2.2 openff-utilities==0.1.12 openff-forcefields==2024.09.0 lomap2==3.1.0```
+```
+mamba install -c conda-forge openmm==8.1.2 openff-toolkit==0.16.6 openff-interchange==0.4.0 openff-units==0.2.2 openff-utilities==0.1.12 openff-forcefields==2024.09.0 lomap2==3.1.0
+```
 
-```mamba install -c openbiosim sire==2024.3.0```
+```
+mamba install -c openbiosim sire==2024.3.0
+```
 
 To use flex align, kcombu also needs to be installed:
 
-```mamba install openbiosim::kcombu_bss```
+```
+mamba install openbiosim::kcombu_bss
+```
 
 The remaining requirements can be installed using:
 
-```pip install -r requirements.txt```
+```
+pip install -r requirements.txt
+```
 
 Clone the BioSimSpace version used for the project at https://github.com/michellab/BioSimSpace/releases/tag/RBFE-benchmark and install this in the environment following the instructions on the repository.
 More recent versions of BioSimSpace are available at https://github.com/openbiosim/biosimspace .
 
 Finally, go to the python directory and install the pipeline in the environment using:
 
-```python setup.py install```
+```
+python setup.py install
+```
 
 To run additional network analysis using either FreeEnergyNetworkAnalysis (https://github.com/michellab/FreeEnergyNetworkAnalysis) or MBARNet (https://gitlab.com/RutgersLBSR/fe-toolkit), please follow their instructions for installation and use. Default network analysis proceeds using cinnabar.
 
