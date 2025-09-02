@@ -26,12 +26,6 @@ mamba install -c conda-forge openmm==8.1.2 openff-toolkit==0.16.6 openff-interch
 mamba install -c openbiosim sire==2024.3.0
 ```
 
-To use flex align, kcombu also needs to be installed:
-
-```
-mamba install openbiosim::kcombu_bss
-```
-
 The remaining requirements can be installed using:
 
 ```
@@ -47,7 +41,17 @@ Finally, go to the python directory and install the pipeline in the environment 
 python setup.py install
 ```
 
+To install the exact version of cinnabar used with the pipeline, please install the tagged version at https://github.com/annamherz/cinnabar/releases/tag/RBFE-benchmark .
+
 To run additional network analysis using either FreeEnergyNetworkAnalysis (https://github.com/michellab/FreeEnergyNetworkAnalysis) or MBARNet (https://gitlab.com/RutgersLBSR/fe-toolkit), please follow their instructions for installation and use. Default network analysis proceeds using cinnabar.
+
+To use flex align, kcombu also needs to be installed:
+
+```
+mamba install openbiosim::kcombu_bss
+```
+
+If the above fails, please follow the instructions at https://github.com/OpenBioSim/kcombu_bss instead. kcombu is only required if flex align is used.
 
 To be able to run the pipeline, GROMACS (tested with version 23.1) and AMBER (tested with version 22) installations are also required. Please follow their instructions for installation and use, available at https://manual.gromacs.org/documentation/2023.1/install-guide/index.html and https://ambermd.org/Installation.php .
 

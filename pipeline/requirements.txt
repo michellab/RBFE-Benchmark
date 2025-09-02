@@ -1,7 +1,6 @@
 adjustText==0.7.3
 alabaster==0.7.12
 alchemlyb==2.0.0
-AmberLite==22.0
 AmberUtils==21.0
 anyio 
 argon2-cffi 
@@ -23,7 +22,6 @@ certifi==2022.12.7
 cffi 
 cftime 
 charset-normalizer 
-cinnabar 
 colorama 
 configargparse
 contourpy 
@@ -93,11 +91,11 @@ notebook==6.4.12
 notebook_shim
 opt-einsum 
 packaging 
-packmol-memgen==1.2.3rc0
+packmol-memgen
 pandas==1.5.2
 pandocfilters 
 panedr 
-ParmEd==3.4.1
+ParmEd
 parso 
 patsy 
 pbr 
